@@ -1,33 +1,39 @@
-﻿# The script of the game goes in this file.
+﻿init python:
+    def callback(event, **kwargs):
+        if event == "show":
+            renpy.music.play("typing.ogg", channel="sound")
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+##Semua alur wajib dibuat menjadi label label agar mudah manajemen nya
 
-define e = Character("Eileen")
+define nar= Character("") #Narrator
+define y = Character("You") #Detektif
+define b= Character("Bro Rendra") #Bos Detektif
+define di= Character("Baskoro Aryatama") #Direktur 
+define an= Character("Anita Kartika") #HRD
 
 
-# The game starts here.
-
+#label start SELALU muncul di new game
 label start:
+    scene bg_darkalley
+    #show eileen happy
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    nar "Sebuah lorong gelap, di pinggiran kota metropolitan"
+    nar "Kota dimana semua orang bisa mendapatkan semua yang mereka mau"
+    nar "wanita, kekuasaan, tahta,"
 
-    scene bg room
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    nar "buzz... buzz..."
+    y "Rendra?"
+    b "Adi..."
+    b "Brief yang kamu butuhkan sudah saya kirim lewat email ya"
+    b "Hati-hati untuk redemption kali ini"
+    nar "beep..."
 
-    show eileen happy
-
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
+    play sound "rokok.ogg"
+    pause 3
+    y "Taksopolis..."
+    y "Entah apa yang akan kau berikan padaku kali ini"
 
     return

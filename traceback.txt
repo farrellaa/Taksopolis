@@ -1,0 +1,24 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 66, in script
+    y "50% dari kejahatan tersebut adalah"
+TypeError: %d format: a number is required, not TagQuotingDict
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 66, in script
+    y "50% dari kejahatan tersebut adalah"
+  File "E:\Renpy\renpy-8.3.2-sdk\renpy\ast.py", line 2573, in execute
+    Say.execute(self)
+  File "E:\Renpy\renpy-8.3.2-sdk\renpy\ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "E:\Renpy\renpy-8.3.2-sdk\renpy\exports\sayexports.py", line 121, in say
+    what = what % tag_quoting_dict
+TypeError: %d format: a number is required, not TagQuotingDict
+
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.3.2.24090902
+Taksopolis 1.0
+Sat Nov 23 10:47:28 2024

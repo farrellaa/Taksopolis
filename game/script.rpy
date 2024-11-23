@@ -13,7 +13,7 @@ init :
     define b= Character("Bro Rendra", callback=callback) #Bos Detektif
     define di= Character("Baskoro Aryatama", callback=callback) #Direktur 
     define an= Character("Anita Kartika", callback=callback) #HRD
-
+    define tuk= Character("Tukang Batagor", callback=callback) #tukang batagor
 
 #label start SELALU muncul di new game
 label start:
@@ -37,4 +37,141 @@ label start:
     y "Taksopolis..."
     y "Entah apa yang akan kau berikan padaku kali ini"
 
+    jump deskripsi_latar
+
     return
+
+label end:
+    return
+
+label deskripsi_latar:
+    scene bg_utopian
+
+    nar "Kamu melangkahkan kakimu ke bagian terbaik dari kota ini, yaitu centre square"
+
+    y "Kota ini adalah kota dimana impian terwujud"
+    y "Kota banyak orang mengadu nasib"
+    y "Kota dimana orang orang hidup dengan tenang dan bahagia"
+    y "Kota utopia"
+    pause 1
+    y "Mungkin itulah yang dipikirkan orang orang yang belum pernah menginjakkan kaki disini"
+    y "...."
+
+    nar "Kamu membuka handphonemu"
+    nar "Kamu membuka classified file dari organisasimu"
+
+    y "Tingkat kriminalitas 20 persen "
+    y "1 dari 5 orang disini adalah seorang kriminal"
+    y "Itukah definisi utopia bagimu?"
+
+    nar "Kamu membaca lagi filemu"
+
+    y "50 persen dari kejahatan tersebut adalah"
+    y "...."
+    y "Penggelapan pajak"
+    y "Pantas saja mereka bisa lolos dengan tindak kriminalnya"
+    y "Hukum disini bisa dibeli dengan uang"
+
+    nar "Menanggapi kelaparanmu, "
+    nar "Kamu menghampiri sebuah stand batagor yang ada di pinggir jalan"
+
+    scene bg_foodstand
+
+    y "Bang, Batagor 50rb ya"
+    tuk "Makan disini apa dibawa pulang, Pak?"
+    y "Makan sini aja ya"
+    tuk "Oke, tunggu sebentar ya"
+    y "Oke"
+
+    nar "Kamu melihat ada tumpukan koran-koran di meja stand itu"
+
+    menu:
+        "Ambil koran?"
+
+        "Ambil Koran":
+            image koran = "koran.png"
+            show koran
+
+            y "Bang, emangnya koran masih kepake ya disini?"
+            tuk "..."
+
+            nar "Abang batagor melirik ke kanan kiri dan mendekat kepadamu seakan akan membisikkan sesuatu"
+            tuk "Kalau pake koran nggak dicek pemerintah pak"
+            tuk "Ini jadi satu satunya media yang bisa kita percaya"
+            y "Oh"
+            y "Izin baca ya bang"
+
+            tuk "Sok aja atuh"
+
+            nar "Kamu mulai membuka koran tersebut lembar per lembar"
+            nar "Semuanya berita masih terasa normal"
+            nar "Sorry, normal disini adalah normal standard Taksopolis"
+            nar "Sampai di halaman terakhir, kamu melihat nama sebuah perusahaan yang sedang mekar"
+            hide koran
+
+        "Biarin aja":
+            y "Bang, disini ada perusahaan yang belakangan ini cepet banget pertumbuhannya ngga ya?"
+            tuk "Maksudnya, pak?"
+            y "Ya, kayak kemaren ngga kedengeran apa apa tiba tiba langsung booming"
+            tuk "Hmm...."
+            nar "Abang batagor melirik ke kanan kiri dan mendekat kepadamu seakan akan membisikkan sesuatu"
+            tuk "Ada pak, bahkan katanya pendapatan setahunnya bisa sampai 400 Miliar USD, Dominion Corp" 
+
+
+    y "400 Miliar USD dalam setahun?!"
+    y "Perusahaan apa ini?! Bahkan aku nggak pernah melihatnya!"
+    tuk "Punten pak, ini batagornya"
+    y "Oh iya, makasih bang"
+    
+    nar "Kamu melanjutkan ke-kagetanmu sambil makan batagor"
+
+    y "Dominion corp, perusahaan consultant..."
+    y "Mungkinkah ini...."
+
+    scene bg_hitam
+
+    nar "Hatimu terguncang"
+    nar "Jiwamu penasaran"
+    y "Mungkin inilah yang dimaksud Bro Rendra, haruskah aku ungkap semua ini?"
+    menu :
+        "Apa yang akan kamu lakukan?"
+
+        "Tindak lanjuti" :
+            jump tindaklanjut
+
+        "Abaikan, biarkan dirimu bersantai sejenak" :
+            jump Abaikan
+
+label tindaklanjut:
+    y "awokawo"
+
+label Abaikan:
+    scene bg_darkalley
+    nar "beep... beep..."
+    nar "handphonemu berdering"
+
+    y "Ada perlu apa Bro Rendra menelfonku?"
+    nar "Kamu mengangkat telfon"
+
+    b " Hari yang cerah, tapi suasana hariku buruk."
+    b "Seburuk kerjamu"
+    b "Apa kau sadar apa kesalahanmu kali ini?"
+    menu :
+        "Apa kamu sadar apa kesalahan yang diperbuat?"
+
+        "Ya, Sadar" :
+            y "Ya, saya sadar kesalahan yang kau maksud."
+            y "Tapi menurutku itu bukan sebuah kesalahan"
+            b "Aku suka kepercayaan dirimu."
+            b "Tapi kau harus ingat bahwa disini kau bawahanku,"
+            b "harus mengikuti perintahku."
+            b "Besok kau harus mulai menyelidiki perusahaan tersebut."
+            
+            nar "beep... beep..."
+            nar "Sebelum kamu bisa menjawab peringatan Bro Rendra, dia sudah menutup telfonnya"
+            jump tindaklanjut
+        "Tidak, saya mau bersantai":
+            nar "Anda telah gagal menjalan misinya untuk mengungkap kasus di kota Taxopolis"
+
+    
+

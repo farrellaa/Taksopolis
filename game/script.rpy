@@ -58,13 +58,13 @@ label deskripsi_latar:
     y "...."
 
     nar "Kamu membuka handphonemu"
-    nar "Kamu membuka classified file dari organisasimu"
+    nar "Kamu membuka berkas dari organisasimu"
 
     y "Tingkat kriminalitas 20 persen "
     y "1 dari 5 orang disini adalah seorang kriminal"
     y "Itukah definisi utopia bagimu?"
 
-    nar "Kamu membaca lagi filemu"
+    nar "Kamu membaca lagi berkasmu"
 
     y "50 persen dari kejahatan tersebut adalah"
     y "...."
@@ -72,7 +72,14 @@ label deskripsi_latar:
     y "Pantas saja mereka bisa lolos dengan tindak kriminalnya"
     y "Hukum disini bisa dibeli dengan uang"
 
-    nar "Menanggapi kelaparanmu, "
+    nar "Kamu membuka folder terakhir di berkas organisasimu"
+    nar "'Seorang detektif yang baik seharusnya sudah tau apa yang ingin dia investigasi'"
+    y "Apa ini?"
+    y "....."
+    y "Bro Rendra memang suka iseng"
+
+    nar "Sudah beberapa jam semenjak terakhir kamu menyantap hidangan"
+    nar "Menanggapi kelaparanmu,"
     nar "Kamu menghampiri sebuah stand batagor yang ada di pinggir jalan"
 
     scene bg_foodstand
@@ -143,7 +150,105 @@ label deskripsi_latar:
             jump Abaikan
 
 label tindaklanjut:
-    y "awokawo"
+    scene bg_hitam
+
+    nar "Mengingat berkas yang diberikan Bro Rendra, kamu pun bergegas kembali ke penginapanmu"
+    "..."
+    play sound "step.ogg"
+    y "Inikah..."
+
+    scene bg_computer
+    y "Kalo dugaanku benar..."
+    play sound "startup.ogg"
+    nar "Kamu menyalakan laptopmu dan mulai membuka berkas yang diberikan Bro Rendra"
+    nar "'Seorang detektif yang baik seharusnya sudah tau apa yang ingin dia investigasi'"
+    nar "'PASSWORD : (Masukkan nama pihak...)'"
+    y "Dominion.."
+    y "Corp.."
+    y "Enter"
+    pause 1
+    nar "'PASSWORD Accepted'"
+    y "Bisa!"
+    nar "'Dominion Corp, EST Nov 2035 (1 Yr Ago)'"
+    nar "'Adress : Taksopolis, Garuda Street, 49F'"
+    nar "'Direktur : Prof. Baskoro Aryatama'"
+    nar "'Last-year Revenue : 400B USD'"
+    nar "'Employee count : 1500 Employees'"
+    nar "'...'"
+
+    y "Wah, kali ini lengkap juga datanya"
+    y "Bagus sih, tapi.."
+    y "Gimana caranya aku mengumpulkan bukti bukti?"
+    nar "Tanpa sadar, tubuhmu mulai lemas, dirimu sudah terlalu lama bertahan tanpa tidur"
+    menu :
+        "Tidur?"
+
+        "Tidur" :
+            scene bg_hitam
+            nar "..."
+            nar "..."
+            pause 1
+            scene bg_computer
+            
+            y "!!!"
+            y "Jam berapa ini?!"
+            y "Bahkan aku belum selesai membaca dokumennya"
+            play sound "startup.ogg"
+            nar "click click... jarimu bergerak cepat di keyboard dan mousemu"
+            y "...."
+            nar "click!"
+            nar "'NOW HIRING : Available position : Accountant; Office Boy'"
+            y "Oh...."
+            pause 1
+            y "Ide bagus"
+        "Nanti dulu" :
+            nar "click click... jarimu bergerak cepat di keyboard dan mousemu"
+            y "...."
+            nar "click!"
+            nar "'NOW HIRING : Available position : Accountant; Office Boy'"
+            y "Oh...."
+            pause 1
+            y "Ide bagus"
+            scene bg_hitam
+            nar "bruk.."
+            pause 1
+            nar "Tubuhmu sepertinya sudah tidak kuat untuk melanjutkan investigasimu malam ini"
+            nar "Kamu pun tertidur di meja kerjamu"
+            nar "...."
+            scene bg_computer
+            y "!!!"
+            y "Jam berapa ini?!"
+    y "Oke, tenang"
+    y "Mari kita buat formulir pendaftaran Dominion Corp terlebih dahulu"
+    y "Nama... Adi Prayoga"
+    y "Tanggal lahir... 23 November 2002"
+    y "..."
+    y "Posisi yang dilamar..."
+    
+    menu :
+        "Sebaiknya aku melamar sebagai posisi apa?"
+        "Accountant" :
+            $ Accountant = 1
+        "Office Boy" :
+            $ Accountant = 0
+    scene bg_darkalley
+    play sound "step.ogg"
+    pause 1
+    nar "dengan waktu yang semakin menipis, kamu bergegas menuju Jalan Garuda Nomor 49F"
+    nar "..."
+    scene bg_kantor
+    y "....."
+    y "Inilah tempatnya.."
+    nar "Kamu memasuki kantor tersebut dengan langkah perlahan"
+    if Accountant :
+        jump alur_akuntan
+    else :
+        jump alur_OB
+
+label alur_akuntan:
+    an "aowkako"
+label alur_OB:
+    an "xixixi"
 
 label Abaikan:
     scene bg_darkalley
@@ -171,7 +276,7 @@ label Abaikan:
             nar "Sebelum kamu bisa menjawab peringatan Bro Rendra, dia sudah menutup telfonnya"
             jump tindaklanjut
         "Tidak, saya mau bersantai":
-            nar "Anda telah gagal menjalan misinya untuk mengungkap kasus di kota Taxopolis"
+            nar "Anda telah gagal menjalankan misi untuk mengungkap kasus di kota Taksopolis"
 
     
 

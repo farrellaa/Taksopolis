@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 131: end of line expected.
-    scene Hitam.png
+File "game/script.rpy", line 231: expected statement.
+    Accountant = 1
+               ^
+
+File "game/script.rpy", line 233: expected statement.
+    Accountant = 0
                ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sat Nov 23 11:08:16 2024
+Sat Nov 23 17:32:59 2024

@@ -7,11 +7,12 @@
 
 ##Semua alur wajib dibuat menjadi label label agar mudah manajemen nya
 
-define nar= Character("") #Narrator
-define y = Character("You") #Detektif
-define b= Character("Bro Rendra") #Bos Detektif
-define di= Character("Baskoro Aryatama") #Direktur 
-define an= Character("Anita Kartika") #HRD
+init :    
+    define nar= Character("", callback=callback) #Narrator
+    define y = Character("You", callback=callback) #Detektif
+    define b= Character("Bro Rendra", callback=callback) #Bos Detektif
+    define di= Character("Baskoro Aryatama", callback=callback) #Direktur 
+    define an= Character("Anita Kartika", callback=callback) #HRD
 
 
 #label start SELALU muncul di new game
@@ -32,7 +33,7 @@ label start:
     nar "beep..."
 
     play sound "rokok.ogg"
-    pause 3
+    pause 4
     y "Taksopolis..."
     y "Entah apa yang akan kau berikan padaku kali ini"
 

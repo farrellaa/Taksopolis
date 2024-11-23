@@ -1,0 +1,26 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 11: unmatched ')'
+    Character("", callback=callback))
+                                     ^
+
+File "game/script.rpy", line 12: unmatched ')'
+    Character("You", callback=callback))
+                                        ^
+
+File "game/script.rpy", line 13: unmatched ')'
+    Character("Bro Rendra", callback=callback))
+                                               ^
+
+File "game/script.rpy", line 14: unmatched ')'
+    Character("Baskoro Aryatama", callback=callback))
+                                                     ^
+
+File "game/script.rpy", line 15: unmatched ')'
+    Character("Anita Kartika", callback=callback))
+                                                  ^
+
+Ren'Py Version: Ren'Py 8.3.2.24090902
+Sat Nov 23 09:40:53 2024

@@ -23,13 +23,17 @@ label start:
     nar "Sebuah lorong gelap, di pinggiran kota metropolitan"
     nar "Kota dimana semua orang bisa mendapatkan semua yang mereka mau"
     nar "wanita, kekuasaan, tahta,"
+    nar "Di antara bayangan dan bau asam dari lorong itu, Seakan membisikkan sesuatu padamu"  
+    nar "'Jangan percaya dengan mereka yang tidak mendengar...'"
+    nar "suara itu seperti bisikan hantu, samar tapi cukup tajam untuk menusuk telingamu."  
 
 
     nar "buzz... buzz..."
     y "Rendra?"
     b "Adi..."
     b "Brief yang kamu butuhkan sudah saya kirim lewat email ya"
-    b "Hati-hati untuk redemption kali ini"
+    b "Kau tahu, kadang tugas seperti ini membuatku bertanya: apa masih ada keadilan di Taksopolis?"  
+    b "Hati-hati, mereka yang akan kau hadapi... tidak akan segan-segan menghapusmu." 
     nar "beep..."
 
     play sound "rokok.ogg"

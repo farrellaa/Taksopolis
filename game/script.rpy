@@ -29,11 +29,15 @@ label start:
 
 
     nar "buzz... buzz..."
+    nar "Handphonemu berdering"
     y "Rendra?"
-    b "Adi..."
+    b "...."
     b "Brief yang kamu butuhkan sudah saya kirim lewat email ya"
     b "Kau tahu, kadang tugas seperti ini membuatku bertanya: apa masih ada keadilan di Taksopolis?"  
-    b "Hati-hati, mereka yang akan kau hadapi... tidak akan segan-segan menghapusmu." 
+    b "Hati-hati, mereka yang akan kau hadapi... tidak akan segan-segan menghapusmu."
+    b "satu hal lagi"
+    b "Mulai sekarang kau adalah.."
+    b "Adi Prayoga" 
     nar "beep..."
 
     play sound "rokok.ogg"
@@ -51,7 +55,7 @@ label end:
 label deskripsi_latar:
     scene bg_utopian
 
-    nar "Kamu melangkahkan kakimu ke bagian terbaik dari kota ini, yaitu centre square"
+    nar "Kamu menghela napas panjang. Bermodalkan berkas, kamu melangkah menuju pusat kota, tempat cerita ini akan benar-benar dimulai."
 
     y "Kota ini adalah kota dimana impian terwujud"
     y "Kota banyak orang mengadu nasib"
@@ -140,21 +144,25 @@ label deskripsi_latar:
     
     nar "Kamu melanjutkan ke-kagetanmu sambil makan batagor"
 
+    ##space untuk pengembangan##
+
+
     y "Dominion corp, perusahaan consultant..."
     y "Mungkinkah ini...."
 
     scene bg_hitam
 
-    nar "Hatimu terguncang"
-    nar "Jiwamu penasaran"
+    nar "Jantungmu berdegup cepat."
+    nar "Rasanya seperti dihimpit oleh rasa takut sekaligus penasaran."
     y "Mungkin inilah yang dimaksud Bro Rendra, haruskah aku ungkap semua ini?"
     menu :
         "Apa yang akan kamu lakukan?"
 
         "Tindak lanjuti" :
-            jump tindaklanjut
             nar "Kamu tahu, setiap langkah membawa risiko. Tapi mundur sekarang bukanlah pilihan." 
+            jump tindaklanjut
         "Abaikan, biarkan dirimu bersantai sejenak" :
+            nar "Pikiranmu berkata untuk berhenti sejenak, tapi nuranimu menggelitik: 'Apa ini tindakan yang benar?'"
             jump Abaikan
 
 label tindaklanjut:
@@ -227,7 +235,7 @@ label tindaklanjut:
             y "!!!"
             y "Jam berapa ini?!"
     y "Oke, tenang"
-    y "Mari kita buat formulir pendaftaran Dominion Corp terlebih dahulu"
+    y "Mari kita isi form pendaftaran Dominion Corp terlebih dahulu"
     y "Nama... Adi Prayoga"
     y "Tanggal lahir... 23 November 2002"
     y "..."
@@ -256,7 +264,26 @@ label tindaklanjut:
 label alur_akuntan:
     an "aowkako"
 label alur_OB:
-    an "xixixi"
+    scene bg_kantor
+    an "Halo, selamat datang"
+    an "Ini Pak Adi ya?"
+    y "Oh iya bu"
+    an "Selamat datang di Dominion Corp, Pak Adi."
+    an "Saya Anita Kartika, kepala HRD di sini. Saya akan menjadi pembimbing Anda selama proses orientasi."
+    y "Terima kasih, Bu Anita. Sebuah kehormatan bisa bergabung di perusahaan sebesar ini."
+    nar "Bu Anita menjulurkan tangannya untuk menjabat tanganku"
+    nar "Rasanya dingin"
+    nar "Seakan ada sesuatu yang belum aku ketahui"
+    an "Oh, Anda pasti akan belajar banyak di sini. Kita di Dominion Corp selalu menghargai kinerja keras dan... loyalitas."
+    nar "Kata 'loyalitas' diucapkannya dengan penekanan yang terasa menusuk, seolah ada makna tersembunyi di baliknya."
+    an "Ayo, saya akan memperkenalkan Anda ke area kerja."
+    
+    an "Ini adalah area kerja utama. Tim administrasi, operasional, dan keuangan bekerja di sini."
+    nar "Ruangan itu luas, dengan meja-meja berjejer rapi dan layar monitor yang memancarkan cahaya biru."
+    nar "Namun, suasananya terlalu tenang. Tidak ada suara obrolan atau gelak tawa. Semua karyawan tampak fokus... atau mungkin terlalu takut untuk melakukan kesalahan."
+    y "Sepertinya semua orang di sini sangat disiplin, ya."
+    an "Kami menghargai profesionalisme, Pak Adi. Setiap detik di Dominion Corp adalah investasi menuju kesuksesan."
+    nar "Kalimat itu terdengar seperti skrip yang dihafal."
 
 label Abaikan:
     scene bg_darkalley

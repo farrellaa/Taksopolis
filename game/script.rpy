@@ -109,7 +109,11 @@ label deskripsi_latar:
             nar "Abang batagor melirik ke kanan kiri dan mendekat kepadamu seakan akan membisikkan sesuatu"
             tuk "Kalau pake koran nggak dicek pemerintah pak"
             tuk "Ini jadi satu satunya media yang bisa kita percaya"
-            y "Oh"
+            y "Oh gitu ya pak"
+            nar "Tatapan tukang batagor tiba-tiba tajam."  
+            tuk "Bapak penasaran, ya? Saya tahu perusahaan itu... Dominion Corp."  
+            y "Dari mana Bang tahu saya detektif?"  
+            tuk "Hati-hati, Pak. Mata-mata mereka ada di mana-mana." 
             y "Izin baca ya bang"
 
             tuk "Sok aja atuh"
@@ -149,7 +153,7 @@ label deskripsi_latar:
 
         "Tindak lanjuti" :
             jump tindaklanjut
-
+            nar "Kamu tahu, setiap langkah membawa risiko. Tapi mundur sekarang bukanlah pilihan." 
         "Abaikan, biarkan dirimu bersantai sejenak" :
             jump Abaikan
 

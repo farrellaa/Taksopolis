@@ -257,6 +257,7 @@ label tindaklanjut:
     y "....."
     y "Inilah tempatnya.."
     nar "Kamu memasuki kantor tersebut dengan langkah perlahan"
+    
     if Accountant :
         jump alur_akuntan
     else :
@@ -264,6 +265,7 @@ label tindaklanjut:
 
 
 ##PERCABANGAN BESAR
+
 
 label alur_akuntan:
     an "aowkako"
@@ -291,7 +293,7 @@ label alur_OB:
     scene bg_hitam
     an "Ini adalah area kerja utama. Tim administrasi, operasional, dan keuangan bekerja di sini."
     nar "Ruangan itu luas, dengan meja-meja berjejer rapi dan layar monitor yang memancarkan cahaya biru."
-    nar "Namun, suasananya terlalu tenang. Tidak ada suara obrolan atau gelak tawa. Semua karyawan tampak fokus.".
+    nar "Namun, suasananya terlalu tenang. Tidak ada suara obrolan atau gelak tawa. Semua karyawan tampak fokus."
     nar "...atau mungkin terlalu takut untuk melakukan kesalahan."
     y "Sepertinya semua orang di sini sangat disiplin ya, Bu"
     an "Kami menghargai profesionalisme, Pak Adi."
@@ -335,6 +337,35 @@ label alur_OB:
     an "Kadang ada kebijakan perusahaan yang sulit dimengerti oleh orang luar, Pak Adi. Kami hanya ingin menjaga keberlanjutan bisnis."
     y "Tentu saja, Bu. Saya paham sekali."
     nar "Namun, di balik senyum sopanmu, niatmu semakin kuat untuk menyelidiki lebih dalam."
+
+    scene bg_kantor
+    an "Baik, Pak Adi. Saya harap tur tadi memberi Anda gambaran tentang bagian mana saja yang harus diperhatikan disini"
+    an "Sekarang, saya akan serahkan jadwal tugas Anda untuk hari ini."
+    y "Terima kasih, Bu Anita. Saya siap bekerja."
+    nar "Anita memberikanmu clipboard dengan daftar tugas. Mata kamu langsung tertuju pada salah satu tugas: 'Membersihkan Ruang Direktur.'"
+    y "...Kesempatan bagus. Aku bisa mulai mencari sesuatu di sana...."
+    an "Jika Anda butuh bantuan atau merasa kesulitan, jangan ragu untuk menghubungi saya, ya."
+    y "Tentu, Bu. Terima kasih."
+    nar "Anita tersenyum ramah sebelum meninggalkanmu untuk memulai pekerjaanmu."
+
+    scene bg_directoroffice
+    nar "Kamu membuka pintu ruangan Direktur dengan hati-hati."
+    nar "Ruangan itu terlihat mewah dengan furnitur mahal dan aroma wangi kayu cendana."
+    nar "Berbeda sekali seperti aroma lorong dekat penginapanmu."
+    y "Baiklah, waktunya 'bekerja'"
+    nar "Sambil membersihkan meja, matamu menangkap tumpukan dokumen yang terlihat mencurigakan."
+    ##mulai collecting detective point
+    $ detective_point =0
+    menu:
+        "Periksa dokumen di meja":
+            y "Hmm, laporan keuangan bulanan. Tidak ada yang aneh di sini..."
+            y "tunggu."
+            y "Ada perbedaan besar antara pendapatan yang tercatat di laporan ini dan data yang aku lihat sebelumnya."
+            nar "Kecurigaanmu semakin kuat."
+            nar  "Kamu mengambil foto dokumen itu dengan ponselmu sebelum meletakkannya kembali."
+            $ detective_point +=1
+        "Lanjutkan bersih-bersih tanpa menyentuh apa pun":
+            nar "Kamu memilih untuk tidak mengambil risiko sekarang. Ada banyak waktu untuk mencari bukti lebih besar nanti."
 
 
 

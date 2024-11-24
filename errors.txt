@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 231: expected statement.
-    Accountant = 1
-               ^
-
-File "game/script.rpy", line 233: expected statement.
-    Accountant = 0
-               ^
+File "game/script.rpy", line 295: end of line expected.
+    nar "Namun, suasananya terlalu tenang. Tidak ada suara obrolan atau gelak tawa. Semua karyawan tampak fokus.".
+                                                                                                                 ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sat Nov 23 17:32:59 2024
+Sun Nov 24 21:58:48 2024

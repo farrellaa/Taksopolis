@@ -14,6 +14,7 @@ init :
     define di= Character("Baskoro Aryatama", callback=callback) #Direktur 
     define an= Character("Anita Kartika", callback=callback) #HRD
     define tuk= Character("Tukang Batagor", callback=callback) #tukang batagor
+    define un= Character("???", callback=callback) #untuk orang orang yang dibuat tidak perlu tau namanya
 
 #label start SELALU muncul di new game
 label start:
@@ -261,29 +262,81 @@ label tindaklanjut:
     else :
         jump alur_OB
 
+
+##PERCABANGAN BESAR
+
 label alur_akuntan:
     an "aowkako"
+
+
 label alur_OB:
     scene bg_kantor
     an "Halo, selamat datang"
     an "Ini Pak Adi ya?"
     y "Oh iya bu"
     an "Selamat datang di Dominion Corp, Pak Adi."
-    an "Saya Anita Kartika, kepala HRD di sini. Saya akan menjadi pembimbing Anda selama proses orientasi."
-    y "Terima kasih, Bu Anita. Sebuah kehormatan bisa bergabung di perusahaan sebesar ini."
+    an "Saya Anita Kartika, kepala HRD di sini." 
+    an "Saya akan menjadi pembimbing Anda selama proses orientasi."
+    y "Terima kasih, Bu Anita."
+    y "Sebuah kehormatan bisa bergabung di perusahaan sebesar ini."
     nar "Bu Anita menjulurkan tangannya untuk menjabat tanganku"
     nar "Rasanya dingin"
     nar "Seakan ada sesuatu yang belum aku ketahui"
-    an "Oh, Anda pasti akan belajar banyak di sini. Kita di Dominion Corp selalu menghargai kinerja keras dan... loyalitas."
-    nar "Kata 'loyalitas' diucapkannya dengan penekanan yang terasa menusuk, seolah ada makna tersembunyi di baliknya."
+    an "Oh, Anda pasti akan belajar banyak di sini." 
+    an "Kita di Dominion Corp selalu menghargai kinerja keras dan... loyalitas."
+    nar "Kata 'loyalitas' diucapkannya dengan penekanan yang terasa menusuk, "
+    nar "seolah ada makna tersembunyi di baliknya."
     an "Ayo, saya akan memperkenalkan Anda ke area kerja."
     
+    scene bg_hitam
     an "Ini adalah area kerja utama. Tim administrasi, operasional, dan keuangan bekerja di sini."
     nar "Ruangan itu luas, dengan meja-meja berjejer rapi dan layar monitor yang memancarkan cahaya biru."
-    nar "Namun, suasananya terlalu tenang. Tidak ada suara obrolan atau gelak tawa. Semua karyawan tampak fokus... atau mungkin terlalu takut untuk melakukan kesalahan."
-    y "Sepertinya semua orang di sini sangat disiplin, ya."
-    an "Kami menghargai profesionalisme, Pak Adi. Setiap detik di Dominion Corp adalah investasi menuju kesuksesan."
+    nar "Namun, suasananya terlalu tenang. Tidak ada suara obrolan atau gelak tawa. Semua karyawan tampak fokus.".
+    nar "...atau mungkin terlalu takut untuk melakukan kesalahan."
+    y "Sepertinya semua orang di sini sangat disiplin ya, Bu"
+    an "Kami menghargai profesionalisme, Pak Adi."
+    an " Setiap detik di Dominion Corp adalah investasi menuju kesuksesan."
     nar "Kalimat itu terdengar seperti skrip yang dihafal."
+
+    scene bg_hitam
+    nar "Ibu Anita memimpinmu menyusuri koridor panjang yang sepi." 
+    nar "Suara langkahmu bergema samar di dinding putih."
+    an "Ini adalah area penyimpanan dokumen penting."
+    an "..."
+    an "Kita tidak sering membawa karyawan baru ke sini, "
+    an "Tapi karena kamu nanti akan membersihkan ruangan ini, rasanya perlu untuk saya beritahu"
+    nar "Nada bicaranya terdengar formal"
+    y "Tentu, Ibu. Menarik sekali melihat bagaimana perusahaan sebesar ini mengelola arsipnya."
+    nar "Namun, langkah Anita tiba-tiba melambat saat melewati pintu toilet bercat abu-abu."
+    nar "Dari dalam ruangan, terdengar suara samar percakapan yang tergesa-gesa."
+
+    un "Ini masalah serius! Mereka akan menyerang kita jika tahu soal pengurangan biaya ini."
+    un "Tenang. Selama kita punya 'manajemen kreatif' di laporan pajak, semuanya akan baik-baik saja."
+    un "Kau bercanda? Kita sudah memotong anggaran asuransi kesehatan, dan itu mengorbankan nyawa, Fauzan!"
+    un "Aku tahu, tapi kalau kita bayar semua itu, perusahaan ini akan rugi besar. Lagipula, kematian itu bukan salah kita, kan?"
+
+    nar "Jantungmu berdegup kencang."
+    nar "Suara itu berhenti sesaat, seolah mereka tahu seseorang mendengarkan."
+    nar "Wajah Ibu Anita sedikit memucat"
+
+    an "Pak Adi, ayo kita lanjutkan tur. Tidak ada yang menarik di sini."
+    nar "Kata-kata Anita keluar terlalu cepat," 
+    nar "seperti berusaha menutupi sesuatu. Matanya menghindari kontak pandang denganmu."
+
+    y "Tentu, Bu Anita."
+    nar "Dengan demikian, tur kantor masih dilakukan oleh Ibu"
+    nar "Kamu mencoba fokus pada tur, tetapi percakapan itu terus bergema di telingamu."
+    y "...Mereka memotong anggaran asuransi..."
+    y "...dan ada seseorang yang meninggal?..."
+    y "...Aku harus menemukan lebih banyak bukti."
+    y "Dunia harus tahu siapa mereka sebenarnya..."
+
+    nar "Di sela melamunmu, Ibu Anita kembali berucap"
+    an "Kadang ada kebijakan perusahaan yang sulit dimengerti oleh orang luar, Pak Adi. Kami hanya ingin menjaga keberlanjutan bisnis."
+    y "Tentu saja, Bu. Saya paham sekali."
+    nar "Namun, di balik senyum sopanmu, niatmu semakin kuat untuk menyelidiki lebih dalam."
+
+
 
 label Abaikan:
     scene bg_darkalley

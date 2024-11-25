@@ -16,7 +16,7 @@ init :
     define tuk= Character("Tukang Batagor", callback=callback) #tukang batagor
     define un= Character("???", callback=callback) #untuk orang orang yang dibuat tidak perlu tau namanya
 
-#label start SELALU muncul di new game
+#label start SELALU muncul di new gamez
 label start:
     scene bg_darkalley
     #show eileen happy
@@ -268,7 +268,85 @@ label tindaklanjut:
 
 
 label alur_akuntan:
-    an "aowkako"
+    scene bg_kantor
+    nar "Kamu berdiri di depan gedung Dominion Corp, bangunan tinggi dengan kaca-kaca berkilauan yang memantulkan cahaya matahari."
+    nar "Pintu otomatis terbuka, menyambutmu masuk ke lobi yang megah namun dingin."
+    y "...Bangunan ini terlihat sempurna, tapi aku tahu ada rahasia kotor di dalamnya..."
+    nar "Seorang resepsionis wanita berdiri di balik meja besar, tersenyum sopan saat melihatmu mendekat."
+
+    un "Selamat datang di Dominion Corp. Anda Adi Prayoga, bukan? Pelamar posisi akuntan?"
+    y "Ya, betul. Saya punya jadwal wawancara hari ini."
+    un "Bagus. Silakan Ikuti saya ke ruang HRD, ya"
+
+    scene bg_hitam
+    nar "Kamu melangkah dengan perlahan di belakang wanita tersebut"
+    nar "Jantungmu berdegup kencang, serasa seperti akan sidang skripsi"
+    nar "Sepanjang perjalanan, kamu memperhatikan setiap sudut ruangan dengan seksama."
+    y "...Segalanya terlihat terlalu sempurna di sini..." 
+    y "...Apa ini cara mereka menutupi kebusukan mereka?..."
+
+    scene bg_ruanghrd
+    nar "Langkah wanita tersebut kemudian berhenti di depan ruangan bertuliskan 'HRD' "
+    un "Silakan masuk. Ini adalah ruang wawancara kami."
+    an "Selamat datang di Dominion Corp, Pak Adi. Saya Anita Kartika, kepala HRD."
+    y "Terima kasih, Ibu Anita. Sebuah kehormatan bisa hadir di sini."
+    nar "Dirimu sadar betul untuk tidak membuat blunder di hari wawancaramu"
+    nar "Ruang itu minimalis "
+    nar "hanya ada meja panjang dengan beberapa kursi dan sebuah layar besar di dinding."
+    an "Saya akan langsung ke inti wawancara ini." 
+    an "Pertama-tama, apa yang membuat Anda tertarik melamar ke Dominion Corp?"
+
+    $ counter = 0
+
+    menu:
+        "Kebetulan skill dan kemampuan saya sesuai dengan yang dicari perusahaan Bapak":
+            $ counter += 1
+            an "Jawaban yang bagus. Kami memang mencari kandidat dengan kemampuan seperti itu."
+        "Saya anaknya direktur, Pak":
+            an "Itu bukan alasan yang cukup kuat untuk melamar di sini."
+        "Saya ingin menyelidiki tentang penggelapan pajak kantor ini, Pak":
+            an "Itu alasan yang aneh. Apakah Anda serius?"
+
+    an "Apa yang Anda ketahui tentang posisi yang Anda lamar ini?"
+
+    menu:
+        "Saya tahu posisi ini membutuhkan ketelitian dalam menganalisis laporan keuangan":
+            $ counter += 1
+            an "Benar sekali. Itu adalah salah satu keahlian utama yang kami butuhkan."
+        "Saya tidak terlalu paham, tapi saya yakin bisa belajar sambil bekerja":
+            an "Kami mencari kandidat yang sudah paham mengenai tanggung jawabnya."
+        "Posisi ini akan memudahkan saya untuk menyelidiki perusahaan ini":
+            an "Itu bukan jawaban profesional. Saya khawatir Anda tidak serius."
+
+    an "Bagaimana Anda menghadapi tekanan kerja yang tinggi?"
+
+    menu:
+        "Saya terbiasa bekerja di bawah tekanan dan tetap menjaga hasil yang optimal":
+            $ counter += 1
+            an "Itu kualitas yang sangat penting. Saya suka mendengar itu."
+        "Saya biasanya akan meminta banyak bantuan dari rekan kerja":
+            an "Itu bukan pendekatan yang baik untuk menangani tekanan."
+        "Saya cenderung menghindari situasi yang terlalu menekan":
+            an "Sayangnya, di sini kami membutuhkan seseorang yang tahan terhadap tekanan."
+
+    if counter >= 2:
+        jump diterima_accountant
+    else:
+        jump ditolak_accountant
+
+label diterima_accountant:
+    an "Selamat, Anda diterima untuk posisi akuntan di Dominion Corp."
+    an "Silakan datang besok untuk memulai hari pertama Anda."
+    y "...Baik, terima kasih atas kesempatannya."
+
+
+label ditolak_accountant:
+    an "Maaf, kami belum bisa menerima Anda untuk posisi ini. Terima kasih sudah melamar."
+    y "...Terima kasih atas kesempatannya."
+    nar "Hatimu bergejolak, mengapa ini bisa terjadi?"
+    nar "Mungkin di misi selanjutnya dirimu bisa berbenah"
+    nar "...dan berhenti mengacaukan semuanya."
+    return
 
 
 label alur_OB:
@@ -356,6 +434,7 @@ label alur_OB:
     nar "Sambil membersihkan meja, matamu menangkap tumpukan dokumen yang terlihat mencurigakan."
     ##mulai collecting detective point
     $ detective_point =0
+    $ laporan_keuangan=False
     menu:
         "Periksa dokumen di meja":
             y "Hmm, laporan keuangan bulanan. Tidak ada yang aneh di sini..."
@@ -364,6 +443,7 @@ label alur_OB:
             nar "Kecurigaanmu semakin kuat."
             nar  "Kamu mengambil foto dokumen itu dengan ponselmu sebelum meletakkannya kembali."
             $ detective_point +=1
+            $ laporan_keuangan=True
         "Lanjutkan bersih-bersih tanpa menyentuh apa pun":
             nar "Kamu memilih untuk tidak mengambil risiko sekarang. Ada banyak waktu untuk mencari bukti lebih besar nanti."
 

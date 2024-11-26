@@ -117,7 +117,6 @@ label deskripsi_latar:
             y "Oh gitu ya pak"
             nar "Tatapan tukang batagor tiba-tiba tajam."  
             tuk "Bapak penasaran, ya? Saya tahu perusahaan itu... Dominion Corp."  
-            y "Dari mana Bang tahu saya detektif?"  
             tuk "Hati-hati, Pak. Mata-mata mereka ada di mana-mana." 
             y "Izin baca ya bang"
 
@@ -368,7 +367,7 @@ label alur_OB:
     nar "seolah ada makna tersembunyi di baliknya."
     an "Ayo, saya akan memperkenalkan Anda ke area kerja."
     
-    scene bg_hitam
+    scene bg_insidekantor
     an "Ini adalah area kerja utama. Tim administrasi, operasional, dan keuangan bekerja di sini."
     nar "Ruangan itu luas, dengan meja-meja berjejer rapi dan layar monitor yang memancarkan cahaya biru."
     nar "Namun, suasananya terlalu tenang. Tidak ada suara obrolan atau gelak tawa. Semua karyawan tampak fokus."
@@ -378,7 +377,7 @@ label alur_OB:
     an " Setiap detik di Dominion Corp adalah investasi menuju kesuksesan."
     nar "Kalimat itu terdengar seperti skrip yang dihafal."
 
-    scene bg_hitam
+    scene bg_pintuterbuka
     nar "Ibu Anita memimpinmu menyusuri koridor panjang yang sepi." 
     nar "Suara langkahmu bergema samar di dinding putih."
     an "Ini adalah area penyimpanan dokumen penting."
@@ -416,7 +415,7 @@ label alur_OB:
     y "Tentu saja, Bu. Saya paham sekali."
     nar "Namun, di balik senyum sopanmu, niatmu semakin kuat untuk menyelidiki lebih dalam."
 
-    scene bg_kantor
+    scene bg_officeboy
     an "Baik, Pak Adi. Saya harap tur tadi memberi Anda gambaran tentang bagian mana saja yang harus diperhatikan disini"
     an "Sekarang, saya akan serahkan jadwal tugas Anda untuk hari ini."
     y "Terima kasih, Bu Anita. Saya siap bekerja."
@@ -530,7 +529,7 @@ label alur_OB:
             nar "beep... beep..."
             nar "Alarm berbunyi. Layar tiba-tiba berubah merah."
             nar "Sebuah pesan muncul di layar: 'AKSES ILEGAL TERDETEKSI.'"
-            scene bg_officehall
+            scene bg_insidekantor
             nar "Langkah kaki terdengar mendekat."
             an "Pak Adi, apa yang sedang Anda lakukan di sini?"
             nar "Suara Anita terdengar dingin, menusuk telinga."

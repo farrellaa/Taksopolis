@@ -435,6 +435,7 @@ label alur_OB:
     ##mulai collecting detective point
     $ detective_point =0
     $ laporan_keuangan=False
+
     menu:
         "Periksa dokumen di meja":
             y "Hmm, laporan keuangan bulanan. Tidak ada yang aneh di sini..."
@@ -446,6 +447,107 @@ label alur_OB:
             $ laporan_keuangan=True
         "Lanjutkan bersih-bersih tanpa menyentuh apa pun":
             nar "Kamu memilih untuk tidak mengambil risiko sekarang. Ada banyak waktu untuk mencari bukti lebih besar nanti."
+
+    scene bg_documentroom
+    nar "Ruangan arsip itu sunyi."
+    nar "Hanya suara langkahmu yang menggema di antara rak-rak tinggi berisi dokumen tebal."
+    y "...Aku harus menemukan sesuatu."
+    y "Sesuatu yang nyata."
+    nar "Matamu tertuju pada sebuah file di sudut meja."
+    nar "File itu terlihat baru saja digunakan."
+    y "...Apa ini?"
+    nar "Kamu membuka file tersebut dengan tangan gemetar."
+    y "Jumlah karyawan..."
+    y "Ini... tidak masuk akal."
+    nar "File itu menunjukkan jumlah karyawan Dominion Corp sebenarnya hanya 900 orang."
+    nar "Bukan 1500 seperti yang mereka klaim."
+    y "...Mereka memalsukan data karyawan mereka."
+    y "Untuk apa?"
+    y "Apakah ini bagian dari manipulasi pajak mereka?"
+
+    menu:
+        "Ambil file tersebut":
+            $ detective_point += 1
+            $ jumlah_karyawan = True
+            nar "Kamu menyelipkan file itu ke dalam tas kecilmu."
+            nar "Tidak ada yang boleh tahu aku melihat ini."
+        "Biarkan file tetap di sana":
+            nar "Kamu memutuskan untuk meninggalkan file itu."
+            nar "Tapi fakta ini terus menghantui pikiranmu."
+    scene bg_kitchen
+    nar "Ruangan pantry sunyi."
+    nar "Hanya suara mesin kopi yang mengisi udara."
+    y "...Kenapa ruangan ini terasa berbeda?"
+    nar "Pandanganmu tertuju pada meja kecil di pojok ruangan."
+    nar "Ada tumpukan kertas yang terlihat berantakan."
+    y "...Apa ini?"
+    nar "Kamu mendekati meja itu."
+    nar "Tanganku gemetar."
+    y "...Sebuah nota?"
+    nar "Kertas itu mencatat transaksi besar."
+    y "500 juta rupiah."
+    y "...Tidak ada detail barang."
+    y "Ini... tidak wajar."
+    nar "Kamu merasa sesuatu yang aneh merayap di tubuhmu."
+    nar "Ini bukti... atau jebakan?"
+
+    menu:
+        "Ambil nota tersebut":
+            $ detective_point += 1
+            $ nota = True
+            nar "Kamu memasukkan nota itu ke dalam saku."
+            nar "Tidak ada yang boleh tahu aku mengambil ini."
+        "Biarkan nota tetap di sana":
+            nar "Kamu memutuskan untuk tidak mengambil risiko."
+            y "...Tapi nota itu terus memanggilku."
+    scene bg_storage
+    nar "Ruang penyimpanan terasa gelap dan lembap."
+    nar "Lampu di langit-langit berkedip pelan, menciptakan bayangan yang bergerak-gerak."
+    y "...Aku tidak seharusnya di sini."
+    nar "Tapi sesuatu menarik perhatianmu."
+    nar "Sebuah laci terbuka sedikit."
+    nar "Di dalamnya, ada sebuah USB drive."
+    y "...USB ini terlihat mencurigakan."
+    nar "Tidak ada label. Tidak ada keterangan."
+    y "Ini... pasti menyimpan sesuatu yang penting."
+    nar "Tanganmu gemetar saat menyentuh USB itu."
+    y "...Apakah aku harus mengambilnya?"
+    
+    nar "Kamu memegang USB itu erat-erat."
+    nar "Pikiranmu bercampur aduk."
+    y "...Aku harus tahu apa isinya."
+    nar "Di seberang ruangan, kamu melihat sebuah komputer yang masih menyala."
+    y "...Apakah aku harus memeriksanya di sini?"
+
+    menu:
+        "Periksa isi USB di komputer terdekat":
+            nar "Kamu mendekati komputer itu perlahan."
+            nar "Tanganku gemetar saat memasukkan USB."
+            nar "Layar menyala dengan cepat."
+            nar "File-file mulai terbuka. Dokumen pajak. Data rahasia."
+            y "Ini dia! Bukti yang aku cari..."
+            nar "Tapi kemudian...."
+            nar "beep... beep..."
+            nar "Alarm berbunyi. Layar tiba-tiba berubah merah."
+            nar "Sebuah pesan muncul di layar: 'AKSES ILEGAL TERDETEKSI.'"
+            scene bg_officehall
+            nar "Langkah kaki terdengar mendekat."
+            an "Pak Adi, apa yang sedang Anda lakukan di sini?"
+            nar "Suara Anita terdengar dingin, menusuk telinga."
+            an "Maaf, kami tidak bisa mentoleransi tindakan seperti ini."
+            nar "Tubuhmu terasa kaku."
+            nar "Dalam beberapa menit, kamu sudah berada di luar gedung."
+            y "...Aku dipecat."
+            return
+
+        "Tunggu sampai nanti untuk memeriksa":
+            nar "Kamu menggenggam USB itu erat-erat."
+            y "...Terlalu berisiko memeriksa di sini."
+            nar "Kamu memutuskan untuk membawa USB itu ke tempat yang lebih aman."
+            nar "Langkah kakimu terasa berat saat meninggalkan ruang penyimpanan."
+            $ detective_point +=1
+            return
+            
 
 
 

@@ -369,7 +369,7 @@ label alur_OB:
     
     scene bg_insidekantor
     an "Ini adalah area kerja utama. Tim administrasi, operasional, dan keuangan bekerja di sini."
-    nar "Ruangan itu luas, dengan meja-meja berjejer rapi dan layar monitor yang memancarkan cahaya biru."
+    nar "Ruangan itu luas, dengan meja-meja berjejer walau tidak rapi dan layar monitor yang memancarkan cahaya biru."
     nar "Namun, suasananya terlalu tenang. Tidak ada suara obrolan atau gelak tawa. Semua karyawan tampak fokus."
     nar "...atau mungkin terlalu takut untuk melakukan kesalahan."
     y "Sepertinya semua orang di sini sangat disiplin ya, Bu"
@@ -380,12 +380,14 @@ label alur_OB:
     scene bg_pintuterbuka
     nar "Ibu Anita memimpinmu menyusuri koridor panjang yang sepi." 
     nar "Suara langkahmu bergema samar di dinding putih."
+    scene bg_documentroom
     an "Ini adalah area penyimpanan dokumen penting."
     an "..."
     an "Kita tidak sering membawa karyawan baru ke sini, "
     an "Tapi karena kamu nanti akan membersihkan ruangan ini, rasanya perlu untuk saya beritahu"
     nar "Nada bicaranya terdengar formal"
     y "Tentu, Ibu. Menarik sekali melihat bagaimana perusahaan sebesar ini mengelola arsipnya."
+    scene bg_pintuterbuka
     nar "Namun, langkah Anita tiba-tiba melambat saat melewati pintu toilet bercat abu-abu."
     nar "Dari dalam ruangan, terdengar suara samar percakapan yang tergesa-gesa."
 

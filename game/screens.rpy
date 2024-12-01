@@ -245,9 +245,9 @@ screen quick_menu():
 
         hbox:
             style_prefix "quick"
-
+            spacing 10
             xalign 0.5
-            yalign 1.0
+            yalign 0.98
 
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
@@ -389,10 +389,10 @@ style main_menu_frame:
 
 style main_menu_vbox:
     xalign 1.0
-    xoffset -30
+    xoffset -1950
     xmaximum 1200
-    yalign 1.0
-    yoffset -30
+    yalign 0.0
+    yoffset 200
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)

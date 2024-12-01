@@ -29,7 +29,75 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
+define gui.about = _p("""Dalam game visual novel Tax Detective, Anda akan memerankan seorang detektif handal yang ditugaskan untuk menyelidiki kasus korupsi pajak di Dominion Corp, sebuah perusahaan besar yang dikenal penuh rahasia dan
+intrik. Laporan dari atasan Anda mengungkapkan bahwa ada kejanggalan besar di dalam perusahaan ini, tetapi bukti-bukti konkret masih sulit ditemukan. 
+Untuk menyusup dan mengungkap kebenaran, Anda harus memutuskan cara terbaik untuk masuk ke dalam Dominion Corp:
+
+• Sebagai Office Boy: Menyelami kehidupan sehari-hari karyawan tingkat bawah dan mengakses ruangan direktur dan dokumen rahasia
+tanpa menimbulkan kecurigaan.
+
+• Sebagai Investor: Menyamar sebagai sosok penting yang dihormati agar dapat mendekati petinggi perusahaan dan menggali informasi dari
+percakapan elit.
+
+Setiap pilihan penyamaran membawa Anda ke jalur cerita yang berbeda dengan tantangan unik, koneksi karakter, dan kesempatan untuk menemukan petunjuk. Anda akan menghadapi dilema moral, pilihan sulit, dan kejutan yang tak terduga.
+
+Melalui keputusan yang Anda buat, alur cerita akan berkembang ke arah yang sepenuhnya ditentukan oleh Anda. Apakah Anda akan berhasil mengungkap jaringan korupsi Dominion Corp dan membawa pelakunya ke pengadilan? Ataukah penyamaran Anda justru berakhir dengan pengkhianatan, bahaya, atau bahkan tragedi?
+
+Game Visual Novel Ini dibuat oleh: 
+
+- Project Manager : 
+
+1. Merlin Aurelia -12823008 - meteorologi
+
+- Game Designer:
+
+1. Habib Annaafi Syafrin 13723049 - Teknik Material
+
+2. Alexander Gultom 13723019 - Teknik Material
+
+3. Jiro Adika Faruq - 12223099 - Teknik Perminyakan
+
+4. Lika Adzkia 12522070
+
+5. Dafa Abdillah 13021076
+
+- Script Writer/Story Developer : 
+
+1. Arla Lian Sabilla- 12823037-Meteorologi
+
+2. Sabrina Nurul Khatimah- 12823037-Meteorologi
+
+- Programmer:
+
+1. Taqidito ilham p 18023039 - Teknik tenaga listrik
+
+2. Farrell Astrada 18321021 - Teknik biomedis
+
+- Graphic Designer/Illustrator:
+
+1. Keysha Fatimah  -12823027
+
+2. Nadhirah Alma Tawfiqa -12823016
+
+3. Taza Nadia Az Zahra- 12823045
+
+- UI/UX Designer:
+
+1. Benedito Benito Tei De Mori - 15320085 - Teknik Lingkungan
+
+- Sound Designer/Composer: 
+
+1. Kevin A. Aryasena - 12923047 - Oseanografi
+
+- Quality Assurance (QA) Tester:
+
+1. Salsabila Effendi - 12823066 - Meteorologi 
+
+2. Erin Carolina-15323012
+
+- Publication Specialist:
+ 
+ 1. Grace Situmeang-15323088-Teknik Lingkungan
 """)
 
 

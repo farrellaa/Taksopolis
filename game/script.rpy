@@ -1,4 +1,4 @@
-﻿init python:
+init python:
     def callback(event, **kwargs):
         if event == "show":
             renpy.music.play("typing.ogg", channel="sound")
@@ -15,12 +15,52 @@ init :
     define an= Character("Anita Kartika", callback=callback) #HRD
     define tuk= Character("Tukang Batagor", callback=callback) #tukang batagor
     define un= Character("???", callback=callback) #untuk orang orang yang dibuat tidak perlu tau namanya
+image You_Merengut="You/You_Merengut.png"
+image You_Mewing="You/You_Mewing.png"
+image You_Senyum="You/You_Senyum.png"
+
+image Rendra_Datar:
+    "Rendra/Rendra_Datar.png"
+    zoom 1.5
+image Rendra_Hepi:
+    "Rendra/Rendra_Hepi.png"
+    zoom 1.5
+
+image Baskoro_Datar:
+    "Director/Baskoro_Datar.png"
+    zoom 1.5
+image Baskoro_Nyengir:
+    "Director/Baskoro_Nyengir.png"
+    zoom 1.5
+
+image HRD_Senyum:
+    "HRD/HRD_Senyum.png"
+    zoom 1.5
+
+image HRD_Datar:
+    "HRD/HRD_Datar.png"
+    zoom 1.5
+
+image HRD_Resah:
+    "HRD/HRD_Resah.png"
+    zoom 1.5
+
+image Batagor:
+    "Batagor/Batagor.png"
+    zoom 1.5
+    yalign 0.5
+
+image Bisikan:
+    "Bisikan.png"
+    zoom 1.5
+    yalign 0.5
 
 #label start SELALU muncul di new gamez
 label start:
     scene bg_darkalley
     #show eileen happy
 
+    play music "initial_dark_alley_intro (1).wav" loop
     nar "Sebuah lorong gelap, di pinggiran kota metropolitan"
     nar "Kota dimana semua orang bisa mendapatkan semua yang mereka mau"
     nar "wanita, kekuasaan, tahta,"
@@ -31,19 +71,26 @@ label start:
 
     nar "buzz... buzz..."
     nar "Handphonemu berdering"
+    show You_Mewing at left
     y "Rendra?"
+    show Rendra_Datar at center
+
     b "...."
     b "Brief yang kamu butuhkan sudah saya kirim lewat email ya"
     b "Kau tahu, kadang tugas seperti ini membuatku bertanya: apa masih ada keadilan di Taksopolis?"  
     b "Hati-hati, mereka yang akan kau hadapi... tidak akan segan-segan menghapusmu."
     b "satu hal lagi"
     b "Mulai sekarang kau adalah.."
+    show Rendra_Hepi at center
     b "Adi Prayoga" 
     nar "beep..."
-
+    hide Rendra_Hepi
+    hide Rendra_Datar
     play sound "rokok.ogg"
     pause 4
     y "Taksopolis..."
+    hide You_Mewing
+    show You_Senyum at left
     y "Entah apa yang akan kau berikan padaku kali ini"
 
     jump deskripsi_latar
@@ -55,9 +102,10 @@ label end:
 
 label deskripsi_latar:
     scene bg_utopian
-
+    play music "utopia_bg.wav" loop
     nar "Kamu menghela napas panjang. Bermodalkan berkas, kamu melangkah menuju pusat kota, tempat cerita ini akan benar-benar dimulai."
 
+    show You_Mewing at left
     y "Kota ini adalah kota dimana impian terwujud"
     y "Kota banyak orang mengadu nasib"
     y "Kota dimana orang orang hidup dengan tenang dan bahagia"
@@ -71,12 +119,16 @@ label deskripsi_latar:
 
     y "Tingkat kriminalitas 20 persen "
     y "1 dari 5 orang disini adalah seorang kriminal"
+    hide You_Mewing
+    show You_Merengut at left
     y "Itukah definisi utopia bagimu?"
 
     nar "Kamu membaca lagi berkasmu"
 
     y "50 persen dari kejahatan tersebut adalah"
     y "...."
+    hide You_Merengut
+    show You_Mewing at left
     y "Penggelapan pajak"
     y "Pantas saja mereka bisa lolos dengan tindak kriminalnya"
     y "Hukum disini bisa dibeli dengan uang"
@@ -92,23 +144,29 @@ label deskripsi_latar:
     nar "Kamu menghampiri sebuah stand batagor yang ada di pinggir jalan"
 
     scene bg_foodstand
-
+    play music "foodstand.wav" loop
+    show You_Senyum at left
     y "Bang, Batagor 50rb ya"
+    show Batagor at center
     tuk "Makan disini apa dibawa pulang, Pak?"
     y "Makan sini aja ya"
     tuk "Oke, tunggu sebentar ya"
     y "Oke"
-
+    hide Batagor
     nar "Kamu melihat ada tumpukan koran-koran di meja stand itu"
-
+    hide You_Senyum
     menu:
         "Ambil koran?"
 
         "Ambil Koran":
-            image koran = "koran.png"
+            image koran :
+                "koran.png"
+                yalign 0.5
             show koran
+            show You_Mewing at left
 
             y "Bang, emangnya koran masih kepake ya disini?"
+            show Batagor at center
             tuk "..."
 
             nar "Abang batagor melirik ke kanan kiri dan mendekat kepadamu seakan akan membisikkan sesuatu"
@@ -129,6 +187,7 @@ label deskripsi_latar:
             hide koran
 
         "Biarin aja":
+            show You_Mewing at left
             y "Bang, disini ada perusahaan yang belakangan ini cepet banget pertumbuhannya ngga ya?"
             tuk "Maksudnya, pak?"
             y "Ya, kayak kemaren ngga kedengeran apa apa tiba tiba langsung booming"
@@ -136,7 +195,7 @@ label deskripsi_latar:
             nar "Abang batagor melirik ke kanan kiri dan mendekat kepadamu seakan akan membisikkan sesuatu"
             tuk "Ada pak, bahkan katanya pendapatan setahunnya bisa sampai 400 Miliar USD, Dominion Corp" 
 
-
+    hide You_Mewing
     y "400 Miliar USD dalam setahun?!"
     y "Perusahaan apa ini?! Bahkan aku nggak pernah melihatnya!"
     tuk "Punten pak, ini batagornya"
@@ -146,12 +205,14 @@ label deskripsi_latar:
 
     ##space untuk pengembangan##
 
-
+    hide Batagor
     y "Dominion corp, perusahaan consultant..."
+    hide You_Mewing 
+    show You_Senyum at left
     y "Mungkinkah ini...."
 
     scene bg_hitam
-
+    play music "bg_hitam.wav" loop
     nar "Jantungmu berdegup cepat."
     nar "Rasanya seperti dihimpit oleh rasa takut sekaligus penasaran."
     y "Mungkin inilah yang dimaksud Bro Rendra, haruskah aku ungkap semua ini?"
@@ -167,13 +228,13 @@ label deskripsi_latar:
 
 label tindaklanjut:
     scene bg_hitam
-
     nar "Mengingat berkas yang diberikan Bro Rendra, kamu pun bergegas kembali ke penginapanmu"
     "..."
     play sound "step.ogg"
     y "Inikah..."
 
     scene bg_computer
+    play music "initial_dark_alley_intro (1).wav" loop
     y "Kalo dugaanku benar..."
     play sound "startup.ogg"
     nar "Kamu menyalakan laptopmu dan mulai membuka berkas yang diberikan Bro Rendra"
@@ -268,6 +329,7 @@ label tindaklanjut:
 
 label alur_akuntan:
     scene bg_kantor
+    play music "bg_kantor.wav" loop
     nar "Kamu berdiri di depan gedung Dominion Corp, bangunan tinggi dengan kaca-kaca berkilauan yang memantulkan cahaya matahari."
     nar "Pintu otomatis terbuka, menyambutmu masuk ke lobi yang megah namun dingin."
     y "...Bangunan ini terlihat sempurna, tapi aku tahu ada rahasia kotor di dalamnya..."
@@ -285,6 +347,7 @@ label alur_akuntan:
     y "...Apa ini cara mereka menutupi kebusukan mereka?..."
 
     scene bg_ruanghrd
+    play music "hrd_mulai_diwawancara.wav" loop
     nar "Langkah wanita tersebut kemudian berhenti di depan ruangan bertuliskan 'HRD' "
     un "Silakan masuk. Ini adalah ruang wawancara kami."
     an "Selamat datang di Dominion Corp, Pak Adi. Saya Anita Kartika, kepala HRD."
@@ -334,9 +397,11 @@ label alur_akuntan:
         jump ditolak_accountant
 
 label diterima_accountant:
+    play music "bg_pas_dapet_job.wav"
     an "Selamat, Anda diterima untuk posisi akuntan di Dominion Corp."
     an "Silakan datang besok untuk memulai hari pertama Anda."
     y "...Baik, terima kasih atas kesempatannya."
+    jump bekerja_accountant
 
 
 label ditolak_accountant:
@@ -347,11 +412,17 @@ label ditolak_accountant:
     nar "...dan berhenti mengacaukan semuanya."
     return
 
-
-label alur_OB:
+label bekerja_accountant :
     scene bg_kantor
+    y "aowkawok"
+label alur_OB:
+
+    scene bg_kantor
+    play music "bg_kantor.wav" loop 
+    show HRD_Senyum at center
     an "Halo, selamat datang"
     an "Ini Pak Adi ya?"
+    show You_Senyum at left
     y "Oh iya bu"
     an "Selamat datang di Dominion Corp, Pak Adi."
     an "Saya Anita Kartika, kepala HRD di sini." 
@@ -359,8 +430,12 @@ label alur_OB:
     y "Terima kasih, Bu Anita."
     y "Sebuah kehormatan bisa bergabung di perusahaan sebesar ini."
     nar "Bu Anita menjulurkan tangannya untuk menjabat tanganku"
+    hide You_Senyum
+    show You_Merengut at left
+    hide HRD_Senyum
     nar "Rasanya dingin"
     nar "Seakan ada sesuatu yang belum aku ketahui"
+    show HRD_Datar at center
     an "Oh, Anda pasti akan belajar banyak di sini." 
     an "Kita di Dominion Corp selalu menghargai kinerja keras dan... loyalitas."
     nar "Kata 'loyalitas' diucapkannya dengan penekanan yang terasa menusuk, "
@@ -368,29 +443,37 @@ label alur_OB:
     an "Ayo, saya akan memperkenalkan Anda ke area kerja."
     
     scene bg_insidekantor
+    play music "bg_hitam.wav" loop
+    show HRD_Senyum
     an "Ini adalah area kerja utama. Tim administrasi, operasional, dan keuangan bekerja di sini."
     nar "Ruangan itu luas, dengan meja-meja berjejer walau tidak rapi dan layar monitor yang memancarkan cahaya biru."
     nar "Namun, suasananya terlalu tenang. Tidak ada suara obrolan atau gelak tawa. Semua karyawan tampak fokus."
     nar "...atau mungkin terlalu takut untuk melakukan kesalahan."
+    show You_Mewing at left 
     y "Sepertinya semua orang di sini sangat disiplin ya, Bu"
     an "Kami menghargai profesionalisme, Pak Adi."
     an " Setiap detik di Dominion Corp adalah investasi menuju kesuksesan."
     nar "Kalimat itu terdengar seperti skrip yang dihafal."
 
     scene bg_pintuterbuka
+    play music "inside_dan_tour_kantor.wav" loop
     nar "Ibu Anita memimpinmu menyusuri koridor panjang yang sepi." 
     nar "Suara langkahmu bergema samar di dinding putih."
     scene bg_documentroom
+    show HRD_Senyum at center
     an "Ini adalah area penyimpanan dokumen penting."
     an "..."
     an "Kita tidak sering membawa karyawan baru ke sini, "
     an "Tapi karena kamu nanti akan membersihkan ruangan ini, rasanya perlu untuk saya beritahu"
     nar "Nada bicaranya terdengar formal"
+    show You_Senyum at left
     y "Tentu, Ibu. Menarik sekali melihat bagaimana perusahaan sebesar ini mengelola arsipnya."
     scene bg_pintuterbuka
     nar "Namun, langkah Anita tiba-tiba melambat saat melewati pintu toilet bercat abu-abu."
     nar "Dari dalam ruangan, terdengar suara samar percakapan yang tergesa-gesa."
 
+    play music "bg_hitam.wav" loop
+    show Bisikan at center
     un "Ini masalah serius! Mereka akan menyerang kita jika tahu soal pengurangan biaya ini."
     un "Tenang. Selama kita punya 'manajemen kreatif' di laporan pajak, semuanya akan baik-baik saja."
     un "Kau bercanda? Kita sudah memotong anggaran asuransi kesehatan, dan itu mengorbankan nyawa, Fauzan!"
@@ -400,10 +483,14 @@ label alur_OB:
     nar "Suara itu berhenti sesaat, seolah mereka tahu seseorang mendengarkan."
     nar "Wajah Ibu Anita sedikit memucat"
 
+    hide Bisikan
+    show HRD_Resah
+
     an "Pak Adi, ayo kita lanjutkan tur. Tidak ada yang menarik di sini."
     nar "Kata-kata Anita keluar terlalu cepat," 
     nar "seperti berusaha menutupi sesuatu. Matanya menghindari kontak pandang denganmu."
 
+    show You_Merengut at left
     y "Tentu, Bu Anita."
     nar "Dengan demikian, tur kantor masih dilakukan oleh Ibu"
     nar "Kamu mencoba fokus pada tur, tetapi percakapan itu terus bergema di telingamu."
@@ -418,8 +505,11 @@ label alur_OB:
     nar "Namun, di balik senyum sopanmu, niatmu semakin kuat untuk menyelidiki lebih dalam."
 
     scene bg_officeboy
+    play music "ruang_hrd_dan_ruang_OB.wav" loop
+    show HRD_Senyum
     an "Baik, Pak Adi. Saya harap tur tadi memberi Anda gambaran tentang bagian mana saja yang harus diperhatikan disini"
     an "Sekarang, saya akan serahkan jadwal tugas Anda untuk hari ini."
+    show You_Senyum at left 
     y "Terima kasih, Bu Anita. Saya siap bekerja."
     nar "Anita memberikanmu clipboard dengan daftar tugas. Mata kamu langsung tertuju pada salah satu tugas: 'Membersihkan Ruang Direktur.'"
     y "...Kesempatan bagus. Aku bisa mulai mencari sesuatu di sana...."
@@ -428,6 +518,7 @@ label alur_OB:
     nar "Anita tersenyum ramah sebelum meninggalkanmu untuk memulai pekerjaanmu."
 
     scene bg_directoroffice
+    play music "director_office.wav" loop
     nar "Kamu membuka pintu ruangan Direktur dengan hati-hati."
     nar "Ruangan itu terlihat mewah dengan furnitur mahal dan aroma wangi kayu cendana."
     nar "Berbeda sekali seperti aroma lorong dekat penginapanmu."
@@ -578,6 +669,7 @@ label Abaikan:
             nar "Sebelum kamu bisa menjawab peringatan Bro Rendra, dia sudah menutup telfonnya"
             jump tindaklanjut
         "Tidak, saya mau bersantai":
+            play music "ending_and_credit_scene.wav" loop
             nar "Anda telah gagal menjalankan misi untuk mengungkap kasus di kota Taksopolis"
 
     

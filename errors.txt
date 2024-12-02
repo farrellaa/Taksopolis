@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 371: play requires a channel
-    play "bg_pas_dapet_job.wav"
-         ^
+The label konvergensi is defined twice, at File "game/script.rpy", line 500:
+label konvergensi:
+and File "game/script.rpy", line 739:
+label konvergensi:
+
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Sun Dec  1 23:00:36 2024
+Mon Dec  2 17:38:58 2024

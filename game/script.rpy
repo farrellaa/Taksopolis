@@ -14,7 +14,8 @@ init :
     define di= Character("Baskoro Aryatama", callback=callback) #Direktur 
     define an= Character("Anita Kartika", callback=callback) #HRD
     define tuk= Character("Tukang Batagor", callback=callback) #tukang batagor
-    define un= Character("???", callback=callback) #untuk orang orang yang dibuat tidak perlu tau namanya
+    define un= Character("???", callback=callback)
+    define Police= Character("Polisi", callback=callback) #untuk orang orang yang dibuat tidak perlu tau namanya
 image You_Merengut="You/You_Merengut.png"
 image You_Mewing="You/You_Mewing.png"
 image You_Senyum="You/You_Senyum.png"
@@ -413,8 +414,100 @@ label ditolak_accountant:
     return
 
 label bekerja_accountant :
-    scene bg_kantor
-    y "aowkawok"
+    $ detective_point = 0  # Variabel untuk mencatat poin deteksi yang benar
+
+    # Scene: Kantor Auditor
+    scene bg_insidekantor
+    nar "Kamu baru saja diterima sebagai akuntan."
+    nar "Tugas pertama kali ini penting."
+    nar "Kamu harus memeriksa laporan keuangan yang mencurigakan."
+    show You_Mewing at left
+    y "Banyak hal yang bisa tersembunyi di sini."
+    y "Setiap angka, setiap transaksi... harus diperiksa."
+
+    # Deteksi 1: Pemotongan Asuransi
+    menu:
+        "Nomor referensi... tak ada masalah.":
+            $ correct_answer = False
+            y "...Tak ada yang aneh di sini."
+            y "Laporan ini terlihat biasa saja."
+        "Pemotongan ini... tak tercatat dengan jelas.":
+            $ correct_answer = True
+            $ detective_point += 1
+            y "Pemotongan asuransi? Aneh..."
+            y "Kenapa tidak tercatat dengan jelas?"
+            y "Harusnya tercantum di baris ini."
+            y "Ini bisa menjadi petunjuk."
+        "Laporan ini... lanjutkan saja.":
+            $ correct_answer = False
+            y "Apa aku salah? Tak ada yang mencurigakan."
+            y "Tapi... rasanya ada yang hilang."
+
+    # Deteksi 2: Pengeluaran yang Tidak Jelas
+    hide You_Mewing
+    show You_Merengut at left
+    menu:
+        "Pembayaran luar negeri... aneh.":
+            $ correct_answer = True
+            $ detective_point += 1
+            y "Pembayaran ini ke luar negeri... kenapa?"
+            y "Kebijakan perusahaan tak pernah menyebutkan ini."
+            y "Ini transaksi yang mencurigakan."
+            y "Ada yang tak beres dengan ini."
+        "Pengeluaran sudah disetujui dalam rapat.":
+            $ correct_answer = False
+            y "Pengeluaran ini sudah disetujui."
+            y "Tak ada yang bisa aku temukan di sini."
+            y "Sepertinya... ini bukan masalah."
+        "Tak ada yang aneh... lanjutkan saja.":
+            $ correct_answer = False
+            y "Tak ada bukti yang kuat di sini."
+            y "Tapi kenapa rasanya aku tetap merasa ada yang salah?"
+
+    # Deteksi 3: Junlah karyawan tak wajar
+    hide You_Merengut
+    show You_Mewing at left
+    y "Dokumen selanjutnya"
+    y "..."
+    y "JUMLAH KARYAWAN!"
+    nar "Jarimu bergerak dengan lincah di dokumen tersebut"
+    menu:
+        "900 Orang, wajar":
+            $ correct_answer = False
+            y "Jumlah ini mungkin sedikit tidak biasa."
+            y "Tapi... ini bisa saja masih masuk akal."
+        "900 Orang? Bukannya....":
+            $ correct_answer = True
+            $ detective_point += 1
+            y "900 Orang?!"
+            y "padahal di dokumen mereka yang dipulish ke publik..."
+            nar "Kamu mengecek dokumen dari Bro Rendra"
+            y "1500..."
+            y "Bingo"
+        "I see nothing" :
+            $ correct_answer = False
+            y "Hmmmm"
+            y "Tidak ada yang aneh"
+
+    # Konvergensi jika poin benar >= 2
+    if detective_point >= 2:
+        jump konvergensi_1
+    else:
+        nar "Aku masih harus menggali lebih dalam."
+        nar "Aku tak bisa membiarkan ini begitu saja."
+        return
+
+label konvergensi_1:
+    nar "Sepertinya feelingmu cukup kuat"
+    y "Data yang saya kumpulkan sudah cukup bagus"
+    y "Ini bukan kebetulan."
+    y "Ada sesuatu yang sangat besar di balik semua ini."
+    y "Aku harus segera melapor."
+    y "Keputusan ini... tak bisa aku tunda lagi."
+    jump konvergensi
+    return
+
+
 label alur_OB:
 
     scene bg_kantor
@@ -582,7 +675,7 @@ label alur_OB:
     y "Ini... tidak wajar."
     nar "Kamu merasa sesuatu yang aneh merayap di tubuhmu."
     nar "Ini bukti... atau jebakan?"
-
+    
     menu:
         "Ambil nota tersebut":
             $ detective_point += 1
@@ -638,7 +731,118 @@ label alur_OB:
             nar "Kamu memutuskan untuk membawa USB itu ke tempat yang lebih aman."
             nar "Langkah kakimu terasa berat saat meninggalkan ruang penyimpanan."
             $ detective_point +=1
-            return
+    if detective_point >= 2:
+        jump konvergensi_1
+    else:
+        nar "Aku masih harus menggali lebih dalam."
+        nar "Aku tak bisa membiarkan ini begitu saja."
+        return
+
+label konvergensi:
+
+    scene office 
+    show You_Mewing at left
+    nar "Hari itu terasa begitu berat. Setiap langkah menuju rumah terasa lebih lama."
+    nar "Kamu berjalan pulang, tubuhnya lelah, namun pikirannya penuh dengan bayangan."
+    nar "Semua petunjuk sudah terkumpul. Semua yang tersembunyi akhirnya terlihat jelas."
+
+    y "...900 karyawan, padahal yang seharusnya 1500."
+    y "...Asuransi yang dipotong, namun tak tercatat dengan jelas."
+    y "...Nota transaksi yang mencurigakan. Semua mengarah ke satu orang."
+
+    show You_Merengut at left
+    nar "Tak bisa lagi Kamu biarkan hal ini begitu saja. Semua bukti yang ditemukan tak bisa dibiarkan menghilang begitu saja."
+    y "Direktur itu harus bertanggung jawab."
+
+    # Scene: Bersiap
+    show You_Senyum at left
+    nar "Kamu berdiri, merapikan jasnya, dan memastikan semua bukti sudah di tangan."
+    y "Kali ini, dia tak akan mundur. Langkah-langkah yang diambil hari ini akan menentukan segalanya."
+    y "Hari ini... semuanya berakhir."
+
+    # Scene: Tidur dan Bangun
+    scene office with dissolve
+    show You_Mewing at left
+    nar "Malam terasa panjang. Tidur datang dengan cepat, namun hati Kamu tak tenang."
+    nar "Di dalam tidurnya, bayangan bukti dan wajah sang Direktur terus menghantui."
+    nar "Dan akhirnya, pagi datang juga."
+
+    nar "Kamu terbangun, matanya masih terasa berat, namun kini lebih pasti."
+    nar "Sebuah keputusan besar menunggu. Segalanya akan berakhir hari ini."
+
+    # Scene: Konfrontasi dengan Direktur
+    scene office with dissolve
+    show Baskoro_Datar at center
+    nar "Kamu tiba di kantor. Di ruang tengah, Direktur Baskoro duduk dengan tenang, tampak tak terganggu."
+    nar "Namun Kamu tahu, semuanya sudah terungkap."
+
+    show You_Merengut at left
+    y "Kau pikir aku tak akan tahu apa yang kau sembunyikan..."
+    y "BASKORO!!"
+    nar "Kamu melangkah mendekat. Setiap langkahnya terasa semakin penuh dengan ketegasan."
+    nar "Kini, tak ada lagi tempat untuk lari."
+
+    show Baskoro_Nyengir at center
+    di "Apa maksudmu, Kamu? Semua sudah berjalan dengan baik. Semua sudah sesuai dengan prosedur."
+
+    show You_Mewing at left
+    Y "Prosedur? Aku menemukan jumlah karyawan yang hanya 900, padahal seharusnya 1500!"
+    Y "Kau berani memalsukan data begitu besar. Kenapa?"
+    nar "Kamu menatap Direktur dengan tajam, seolah menusuk langsung ke jantung kebohongannya."
+
+    show Baskoro_Nyengir at center
+    di "Itu hanya masalah kecil. Tak perlu terlalu dibesar-besarkan."
+
+    show You_Merengut at left
+    y "Tidak ada yang kecil, [di]. Asuransi yang dipotong, tak tercatat dengan benar!"
+    y "Apa yang kau lakukan dengan uang itu? Kenapa kau sembunyikan dari perusahaan?"
+    nar "Kamu berbicara dengan nada yang lebih keras. Rasa marah dan keteguhan mengalir dalam suaranya."
+
+    show Baskoro_Datar at center
+    di "Semua itu... demi perusahaan. Demi masa depan kita."
+
+    show You_Mewing at left
+    y "Masa depan? Masa depan seperti apa yang kau maksudkan jika karyawan dibiarkan kelaparan dan asuransi tidak cair?"
+    y "Aku menemukan transaksi yang mencurigakan. Dan kau mencoba menutupi semuanya."
+
+    nar "Kamu menarik napas dalam-dalam. Semua yang tersembunyi kini sudah terungkap, tak ada lagi yang bisa disembunyikan."
+
+    # Scene: Direktur Berusaha Keluar
+    show Baskoro_Nyengir at center
+    di "Aku tak bisa terus berdiri di sini. Ini semua... kebodohan. Aku akan keluar."
+
+    show You_Merengut at left
+    y "Kau kira bisa lari begitu saja, [di]?"
+    nar "Kamu segera mendekatkan dirinya ke pintu. Tak ada yang bisa melarikan diri dari kebenaran."
+
+    # Scene: Plot Twist - Polisi Sudah Datang
+    nar "Namun, tiba-tiba pintu terbuka. Polisi, yang sudah siap, masuk dengan tegas."
+    show Baskoro_Datar at center
+    Police "Tuan Baskoro Aryatama, Anda kami tangkap atas tuduhan penipuan, penyalahgunaan dana, dan penggelapan PAJAK."
+
+    show You_Senyum at left
+    y "Aku sudah menghubungi mereka. Polisi sudah di luar menunggu. Ini sudah selesai, Baskoro!."
+
+    nar "Direktur terlihat terkejut, keringatnya bercucuran, dan wajahnya penuh kebingungannya."
+    nar "Ia tak bisa berbuat apa-apa lagi."
+
+    # Scene: Akhir yang Memuaskan
+    scene office with dissolve
+    nar "Direktur ditangkap. Polisi membawanya pergi, dan ia tak bisa melarikan diri lagi."
+    nar "Para karyawan yang selama ini tertipu akhirnya menerima gaji yang seharusnya mereka dapatkan."
+    nar "Pajak yang selama ini belum dibayar, akhirnya lunas setelah rumah Direktur dijual."
+    nar "Dan orang yang meninggal akibat tidak cairnya asuransi, keluarganya kini menerima kompensasi yang layak."
+
+    show You_Mewing at left
+    y "Akhirnya... keadilan ditegakkan."
+
+    nar "Kamu duduk, tubuhnya terasa lelah, namun hatinya tenang."
+    nar "Segala perjuangan yang dilakukan, tak sia-sia. Semua petunjuk yang terkumpul kini membawa pada akhirnya."
+
+    scene bg_hitam
+    nar "Good Ending"
+    return
+
             
 
 

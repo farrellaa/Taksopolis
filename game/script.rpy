@@ -29,10 +29,10 @@ image Rendra_Hepi:
 
 image Baskoro_Datar:
     "Director/Baskoro_Datar.png"
-    zoom 1.5
+    zoom 1.2
 image Baskoro_Nyengir:
     "Director/Baskoro_Nyengir.png"
-    zoom 1.5
+    zoom 1.2
 
 image HRD_Senyum:
     "HRD/HRD_Senyum.png"
@@ -740,12 +740,12 @@ label alur_OB:
 
 label konvergensi:
 
-    scene office 
-    show You_Mewing at left
+    scene bg_darkalley 
+    
     nar "Hari itu terasa begitu berat. Setiap langkah menuju rumah terasa lebih lama."
-    nar "Kamu berjalan pulang, tubuhnya lelah, namun pikirannya penuh dengan bayangan."
+    nar "Kamu berjalan pulang, tubuhmu lelah, namun pikiranmu penuh dengan bayangan."
     nar "Semua petunjuk sudah terkumpul. Semua yang tersembunyi akhirnya terlihat jelas."
-
+    show You_Mewing at left
     y "...900 karyawan, padahal yang seharusnya 1500."
     y "...Asuransi yang dipotong, namun tak tercatat dengan jelas."
     y "...Nota transaksi yang mencurigakan. Semua mengarah ke satu orang."
@@ -756,22 +756,22 @@ label konvergensi:
 
     # Scene: Bersiap
     show You_Senyum at left
-    nar "Kamu berdiri, merapikan jasnya, dan memastikan semua bukti sudah di tangan."
+    nar "Kamu berdiri, merapikan jasmu, dan memastikan semua bukti sudah di tangan."
     y "Kali ini, dia tak akan mundur. Langkah-langkah yang diambil hari ini akan menentukan segalanya."
     y "Hari ini... semuanya berakhir."
 
     # Scene: Tidur dan Bangun
-    scene office with dissolve
-    show You_Mewing at left
-    nar "Malam terasa panjang. Tidur datang dengan cepat, namun hati Kamu tak tenang."
-    nar "Di dalam tidurnya, bayangan bukti dan wajah sang Direktur terus menghantui."
-    nar "Dan akhirnya, pagi datang juga."
+    scene bg_computer with dissolve
 
-    nar "Kamu terbangun, matanya masih terasa berat, namun kini lebih pasti."
+    nar "Malam terasa panjang. Tidur datang dengan cepat, namun hati Kamu tak tenang."
+    nar "Di dalam tidurmu, bayangan bukti dan wajah sang Direktur terus menghantui."
+    nar "Dan akhirmu, pagi datang juga."
+
+    nar "Kamu terbangun, matamu masih terasa berat, namun kini lebih pasti."
     nar "Sebuah keputusan besar menunggu. Segalanya akan berakhir hari ini."
 
     # Scene: Konfrontasi dengan Direktur
-    scene office with dissolve
+    scene bg_insidekantor with dissolve
     show Baskoro_Datar at center
     nar "Kamu tiba di kantor. Di ruang tengah, Direktur Baskoro duduk dengan tenang, tampak tak terganggu."
     nar "Namun Kamu tahu, semuanya sudah terungkap."
@@ -779,15 +779,15 @@ label konvergensi:
     show You_Merengut at left
     y "Kau pikir aku tak akan tahu apa yang kau sembunyikan..."
     y "BASKORO!!"
-    nar "Kamu melangkah mendekat. Setiap langkahnya terasa semakin penuh dengan ketegasan."
+    nar "Kamu melangkah mendekat. Setiap langkahmu terasa semakin penuh dengan ketegasan."
     nar "Kini, tak ada lagi tempat untuk lari."
 
     show Baskoro_Nyengir at center
     di "Apa maksudmu, Kamu? Semua sudah berjalan dengan baik. Semua sudah sesuai dengan prosedur."
 
     show You_Mewing at left
-    Y "Prosedur? Aku menemukan jumlah karyawan yang hanya 900, padahal seharusnya 1500!"
-    Y "Kau berani memalsukan data begitu besar. Kenapa?"
+    y "Prosedur? Aku menemukan jumlah karyawan yang hanya 900, padahal seharusnya 1500!"
+    y "Kau berani memalsukan data begitu besar. Kenapa?"
     nar "Kamu menatap Direktur dengan tajam, seolah menusuk langsung ke jantung kebohongannya."
 
     show Baskoro_Nyengir at center
@@ -827,7 +827,7 @@ label konvergensi:
     nar "Ia tak bisa berbuat apa-apa lagi."
 
     # Scene: Akhir yang Memuaskan
-    scene office with dissolve
+    scene bg_kantor with dissolve
     nar "Direktur ditangkap. Polisi membawanya pergi, dan ia tak bisa melarikan diri lagi."
     nar "Para karyawan yang selama ini tertipu akhirnya menerima gaji yang seharusnya mereka dapatkan."
     nar "Pajak yang selama ini belum dibayar, akhirnya lunas setelah rumah Direktur dijual."

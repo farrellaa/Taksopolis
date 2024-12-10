@@ -16,6 +16,56 @@ init :
     define tuk= Character("Tukang Batagor", callback=callback) #tukang batagor
     define un= Character("???", callback=callback)
     define Police= Character("Polisi", callback=callback) #untuk orang orang yang dibuat tidak perlu tau namanya
+screen credits_screen():
+    tag menu
+
+    vbox:
+        spacing 10
+        align (0.5, 0.1)
+        
+        text "Game Visual Novel Ini dibuat oleh:" size 30 bold True
+        
+        text "- Project Manager:" size 25
+        text "1. Merlin Aurelia - 12823008 - Meteorologi" size 22
+
+        text "- Game Designer:" size 25
+        text "1. Habib Annaafi Syafrin - 13723049 - Teknik Material" size 22
+        text "2. Alexander Gultom - 13723019 - Teknik Material" size 22
+        text "3. Jiro Adika Faruq - 12223099 - Teknik Perminyakan" size 22
+        text "4. Lika Adzkia - 12522070" size 22
+        text "5. Dafa Abdillah - 13021076" size 22
+
+        text "- Script Writer/Story Developer:" size 25
+        text "1. Arla Lian Sabilla - 12823037 - Meteorologi" size 22
+        text "2. Sabrina Nurul Khatimah - 12823037 - Meteorologi" size 22
+
+        text "- Programmer:" size 25
+        text "1. Taqidito Ilham P - 18023039 - Teknik Tenaga Listrik" size 22
+        text "2. Farrell Astrada - 18321021 - Teknik Biomedis" size 22
+
+        text "- Graphic Designer/Illustrator:" size 25
+        text "1. Keysha Fatimah - 12823027" size 22
+        text "2. Nadhirah Alma Tawfiqa - 12823016" size 22
+        text "3. Taza Nadia Az Zahra - 12823045" size 22
+
+        text "- UI/UX Designer:" size 25
+        text "1. Benedito Benito Tei De Mori - 15320085 - Teknik Lingkungan" size 22
+
+        text "- Sound Designer/Composer:" size 25
+        text "1. Kevin A. Aryasena - 12923047 - Oseanografi" size 22
+
+        text "- Quality Assurance (QA) Tester:" size 25
+        text "1. Salsabila Effendi - 12823066 - Meteorologi" size 22
+        text "2. Erin Carolina - 15323012" size 22
+
+        text "- Publication Specialist:" size 25
+        text "1. Grace Situmeang - 15323088 - Teknik Lingkungan" size 22
+
+        text "Dibimbing oleh Bapak Harry Nuriman, untuk tugas PKWN." size 25 bold True
+
+        textbutton "Kembali ke Menu Utama" action Return() align (0.5, 0.9)
+
+
 image You_Merengut="You/You_Merengut.png"
 image You_Mewing="You/You_Mewing.png"
 image You_Senyum="You/You_Senyum.png"
@@ -350,6 +400,7 @@ label alur_akuntan:
     scene bg_ruanghrd
     play music "hrd_mulai_diwawancara.wav" loop
     nar "Langkah wanita tersebut kemudian berhenti di depan ruangan bertuliskan 'HRD' "
+    show HRD_Senyum at center
     un "Silakan masuk. Ini adalah ruang wawancara kami."
     an "Selamat datang di Dominion Corp, Pak Adi. Saya Anita Kartika, kepala HRD."
     y "Terima kasih, Ibu Anita. Sebuah kehormatan bisa hadir di sini."
@@ -841,6 +892,12 @@ label konvergensi:
 
     scene bg_hitam
     nar "Good Ending"
+    scene black
+    with fade
+    "Terima kasih telah bermain!"
+    call screen credits_screen
+    return
+
     return
 
             

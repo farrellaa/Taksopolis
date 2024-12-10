@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Taksopolis")
+define config.name = _("Tax \n Detective")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -105,7 +105,7 @@ Game Visual Novel Ini dibuat oleh:
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Taksopolis"
+define build.name = "Tax Detective"
 
 
 ## Sounds and music ############################################################

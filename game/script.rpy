@@ -41,6 +41,7 @@ screen credits_screen():
         text "- Script Writer/Story Developer:" size 25
         text "1. Arla Lian Sabilla - 12823037 - Meteorologi" size 22
         text "2. Sabrina Nurul Khatimah - 12823037 - Meteorologi" size 22
+        text "3. Taqidito Ilham Pratama - 18023039 - Teknik Tenaga Listrik" size 22
 
         text "- Programmer:" size 25
         text "1. Taqidito Ilham P - 18023039 - Teknik Tenaga Listrik" size 22
@@ -50,6 +51,7 @@ screen credits_screen():
         text "1. Keysha Fatimah - 12823027" size 22
         text "2. Nadhirah Alma Tawfiqa - 12823016" size 22
         text "3. Taza Nadia Az Zahra - 12823045" size 22
+        text "4. Taqidito Ilham Pratama - 18023039 - Teknik Tenaga Listrik" size 22
 
         text "- UI/UX Designer:" size 25
         text "1. Benedito Benito Tei De Mori - 15320085 - Teknik Lingkungan" size 22

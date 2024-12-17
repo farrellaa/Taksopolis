@@ -515,92 +515,100 @@ label ditolak_accountant:
     nar "...dan berhenti mengacaukan semuanya."
     return
 
-label bekerja_accountant :
+label bekerja_accountant:
     $ detective_point = 0  # Variabel untuk mencatat poin deteksi yang benar
 
-    # Scene: Kantor Auditor
+    # Scene 1: Ruang Kerja Akuntan
     scene bg_insidekantor
-    nar "Kamu baru saja diterima sebagai akuntan."
-    nar "Tugas pertama kali ini penting."
-    nar "Kamu harus memeriksa laporan keuangan yang mencurigakan."
-    show You_Mewing at left
-    y "Banyak hal yang bisa tersembunyi di sini."
-    y "Setiap angka, setiap transaksi... harus diperiksa."
+    play music "bg_kantor.wav" loop
+    nar "Hari pertama sebagai akuntan di Dominion Corp. Ruang kerja ini tampak sunyi, tapi ada sesuatu yang terasa janggal."  
+    show You_Mewing at left  
+    y "Banyak angka di sini. Tapi, angka tidak pernah bohong... kecuali jika seseorang memutarbalikkannya."  
+    nar "Tugas pertamamu adalah memeriksa laporan keuangan. Sebuah meja dengan tumpukan berkas menantimu."  
 
     # Deteksi 1: Pemotongan Asuransi
-    menu:
-        "Nomor referensi... tak ada masalah.":
-            $ correct_answer = False
-            y "...Tak ada yang aneh di sini."
-            y "Laporan ini terlihat biasa saja."
-        "Pemotongan ini... tak tercatat dengan jelas.":
-            $ correct_answer = True
-            $ detective_point += 1
-            y "Pemotongan asuransi? Aneh..."
-            y "Kenapa tidak tercatat dengan jelas?"
-            y "Harusnya tercantum di baris ini."
-            y "Ini bisa menjadi petunjuk."
-        "Laporan ini... lanjutkan saja.":
-            $ correct_answer = False
-            y "Apa aku salah? Tak ada yang mencurigakan."
-            y "Tapi... rasanya ada yang hilang."
+    nar "Matamu tertuju pada laporan gaji karyawan. Kamu menyisir setiap angka dengan hati-hati."  
+    show You_Merengut at left  
+    y "Ada yang tidak beres di sini... potongan asuransi?"
 
-    # Deteksi 2: Pengeluaran yang Tidak Jelas
-    hide You_Mewing
-    show You_Merengut at left
     menu:
-        "Pembayaran luar negeri... aneh.":
-            $ correct_answer = True
+        "Periksa lebih dalam: Potongan asuransi ini tidak tercatat dengan jelas.":
             $ detective_point += 1
-            y "Pembayaran ini ke luar negeri... kenapa?"
-            y "Kebijakan perusahaan tak pernah menyebutkan ini."
-            y "Ini transaksi yang mencurigakan."
-            y "Ada yang tak beres dengan ini."
-        "Pengeluaran sudah disetujui dalam rapat.":
-            $ correct_answer = False
-            y "Pengeluaran ini sudah disetujui."
-            y "Tak ada yang bisa aku temukan di sini."
-            y "Sepertinya... ini bukan masalah."
-        "Tak ada yang aneh... lanjutkan saja.":
-            $ correct_answer = False
-            y "Tak ada bukti yang kuat di sini."
-            y "Tapi kenapa rasanya aku tetap merasa ada yang salah?"
+            y "Potongan ini tidak ada rincian pastinya. Harusnya ada penjelasan lengkap tentang klaim asuransi."  
+            nar "Bayangkan jika salah satu karyawan sakit dan asuransi itu tidak cair... Nyawa bisa terancam hanya karena ini."  
+            y "Ini bukan sekadar angka, ini soal hidup dan mati."  
+        "Nomor referensi tampak wajar, lanjutkan saja.":
+            y "Mungkin ini bukan masalah besar. Tapi... perasaan ini masih menggangguku."  
+        "Abaikan, fokus ke laporan lain.":
+            y "Aku harus hati-hati. Terlalu banyak asumsi bisa membuatku melewatkan hal penting."
 
-    # Deteksi 3: Junlah karyawan tak wajar
-    hide You_Merengut
-    show You_Mewing at left
-    y "Dokumen selanjutnya"
-    y "..."
-    with vpunch
-    y "JUMLAH KARYAWAN!"
-    nar "Jarimu bergerak dengan lincah di dokumen tersebut"
+    # Scene 2: Ruang Arsip
+    scene bg_documentroom
+    play music "bg_hitam.wav" loop
+    nar "Kamu pindah ke ruang arsip untuk memeriksa dokumen lebih lama. Ruangan itu dingin dan berdebu, seolah menyembunyikan banyak rahasia."  
+    show You_Mewing at left  
+    y "Jika ada yang ingin disembunyikan... pasti ada di sini."
+
+    # Deteksi 2: Pengeluaran Tidak Wajar
+    nar "Kamu menemukan berkas pengeluaran perusahaan. Salah satu laporan mencurigakan menarik perhatianmu."  
     menu:
-        "900 Orang, wajar":
-            $ correct_answer = False
-            y "Jumlah ini mungkin sedikit tidak biasa."
-            y "Tapi... ini bisa saja masih masuk akal."
-        "900 Orang? Bukannya....":
-            $ correct_answer = True
+        "Lihat detail pembayaran ke luar negeri: Kenapa ada biaya ini?":
+            $ detective_point += 1
+            y "Pembayaran luar negeri sebesar 2 miliar rupiah? Tidak ada keterangan barang atau jasa apapun."  
+            y "Untuk apa uang ini? Ini jelas transaksi yang mencurigakan."  
+            nar "Pikiranmu mulai mengaitkan semua ini... Ke mana larinya uang rakyat jika pajak terus dimanipulasi?"  
+        "Pengeluaran ini terlihat sudah disetujui, lanjutkan saja.":
+            y "Mungkin ini sah... Tapi mengapa rasanya ada yang salah?"
+        "Biarkan saja. Fokus ke dokumen berikutnya.":
+            y "Aku mungkin hanya berlebihan. Ada hal lain yang harus kuperiksa."
+
+    # Refleksi di Ruang Pantry
+    scene bg_kitchen
+    play music "bg_hitam.wav"
+    nar "Kamu menuju pantry untuk menenangkan pikiran. Beberapa karyawan berbincang di pojok, namun hening ketika melihatmu masuk."  
+    show You_Merengut at left  
+    y "Suasana di sini terlalu aneh. Mereka seperti takut berbicara... Apa yang mereka sembunyikan?"  
+    nar "Satu suara samar terdengar dari dua karyawan di ujung ruangan."  
+
+    show Bisikan at center with vpunch
+    un "Potongan gaji kita makin besar, tapi fasilitas kesehatan malah dicabut."  
+    un "Kalau begini terus, siapa yang akan bertanggung jawab kalau kita sakit?"  
+
+    hide Bisikan
+    show You_Mewing at left  
+    y "...Mereka bahkan tidak tahu hak mereka. Pajak yang seharusnya untuk mereka malah lenyap begitu saja."  
+
+    # Scene 3: Laporan Karyawan - Jumlah Karyawan Tak Wajar
+    scene bg_insidekantor
+    nar "Kamu kembali ke meja kerjamu dan membuka laporan terakhir: jumlah karyawan."  
+    show You_Mewing at left  
+    y "Jumlah karyawan resmi... 900 orang? Tunggu..."  
+    nar "Kamu membuka data publik dari Dominion Corp yang diberikan oleh Bro Rendra."  
+
+    menu:
+        "Cocokkan dengan data publik: Ini tidak benar!":
             $ detective_point += 1
             with vpunch
-            y "900 Orang?!"
-            y "padahal di dokumen mereka yang dipulish ke publik..."
-            nar "Kamu mengecek dokumen dari Bro Rendra"
-            y "1500..."
-            y "Bingo"
-        "I see nothing" :
-            $ correct_answer = False
-            y "Hmmmm"
-            y "Tidak ada yang aneh"
+            y "Mereka mengklaim 1500 karyawan! Tapi di sini cuma 900!"  
+            y "Selisih 600 orang... Apakah ini cara mereka menghindari pajak tenaga kerja?"  
+            nar "Dampaknya jelas: uang yang seharusnya untuk kesejahteraan karyawan lenyap begitu saja."  
+        "Lewati saja, mungkin ini bukan masalah besar.":
+            y "Angka ini aneh... Tapi aku harus berhati-hati sebelum menuduh sesuatu."  
 
-    # Konvergensi jika poin benar >= 2
+    # Refleksi Akhir Investigasi
+    scene bg_hitam
+    nar "Kamu menyandarkan tubuhmu di kursi, memejamkan mata sejenak."  
+    nar "Potongan asuransi yang tidak jelas. Pengeluaran misterius ke luar negeri. Jumlah karyawan yang dipalsukan."  
+    show You_Merengut at left  
+    y "Semua ini... tidak hanya soal uang. Ini tentang kehidupan orang-orang yang dirampas haknya."  
+    y "Jika pajak itu dibayarkan dengan benar, berapa banyak sekolah yang bisa dibangun? Berapa banyak nyawa yang bisa diselamatkan?"  
+
+    # Keputusan Akhir
     if detective_point >= 2:
         jump konvergensi_1
     else:
-        nar "Aku masih harus menggali lebih dalam."
-        nar "Aku tak bisa membiarkan ini begitu saja."
         jump gagal_misi
-        return
+
 
 label konvergensi_1:
     nar "Sepertinya feelingmu cukup kuat"

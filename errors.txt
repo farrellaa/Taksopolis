@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 19: screen expects a non-empty block.
-    screen disclaimer ():
+File "game/script.rpy", line 827: expected statement.
+    "Coba lagi dari awal":
                          ^
 
+File "game/script.rpy", line 829: expected statement.
+    "Keluar dari permainan":
+                           ^
+
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Tue Dec 17 16:07:06 2024
+Tue Dec 17 17:23:50 2024

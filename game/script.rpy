@@ -253,6 +253,7 @@ label deskripsi_latar:
             tuk "Ada pak, bahkan katanya pendapatan setahunnya bisa sampai 400 Miliar USD, Dominion Corp" 
 
     hide You_Mewing
+    with vpunch    
     y "400 Miliar USD dalam setahun?!"
     y "Perusahaan apa ini?! Bahkan aku nggak pernah melihatnya!"
     tuk "Punten pak, ini batagornya"
@@ -302,6 +303,7 @@ label tindaklanjut:
     y "Enter"
     pause 1
     nar "'PASSWORD Accepted'"
+    with vpunch
     y "Bisa!"
     nar "'Dominion Corp, EST Nov 2035 (1 Yr Ago)'"
     nar "'Adress : Taksopolis, Garuda Street, 49F'"
@@ -324,6 +326,7 @@ label tindaklanjut:
             pause 1
             scene bg_computer
             
+            with vpunch
             y "!!!"
             y "Jam berapa ini?!"
             y "Bahkan aku belum selesai membaca dokumennya"
@@ -331,6 +334,7 @@ label tindaklanjut:
             nar "click click... jarimu bergerak cepat di keyboard dan mousemu"
             y "...."
             nar "click!"
+            with vpunch
             nar "'NOW HIRING : Available position : Accountant; Office Boy'"
             y "Oh...."
             pause 1
@@ -350,6 +354,7 @@ label tindaklanjut:
             nar "Kamu pun tertidur di meja kerjamu"
             nar "...."
             scene bg_computer
+            with vpunch
             y "!!!"
             y "Jam berapa ini?!"
     y "Oke, tenang"
@@ -526,6 +531,7 @@ label bekerja_accountant :
     show You_Mewing at left
     y "Dokumen selanjutnya"
     y "..."
+    with vpunch
     y "JUMLAH KARYAWAN!"
     nar "Jarimu bergerak dengan lincah di dokumen tersebut"
     menu:
@@ -536,6 +542,7 @@ label bekerja_accountant :
         "900 Orang? Bukannya....":
             $ correct_answer = True
             $ detective_point += 1
+            with vpunch
             y "900 Orang?!"
             y "padahal di dokumen mereka yang dipulish ke publik..."
             nar "Kamu mengecek dokumen dari Bro Rendra"
@@ -552,6 +559,7 @@ label bekerja_accountant :
     else:
         nar "Aku masih harus menggali lebih dalam."
         nar "Aku tak bisa membiarkan ini begitu saja."
+        jump gagal_misi
         return
 
 label konvergensi_1:
@@ -624,6 +632,7 @@ label alur_OB:
 
     play music "bg_hitam.wav" loop
     show Bisikan at center
+    with vpunch
     un "Ini masalah serius! Mereka akan menyerang kita jika tahu soal pengurangan biaya ini."
     un "Tenang. Selama kita punya 'manajemen kreatif' di laporan pajak, semuanya akan baik-baik saja."
     un "Kau bercanda? Kita sudah memotong anggaran asuransi kesehatan, dan itu mengorbankan nyawa, Fauzan!"
@@ -767,6 +776,7 @@ label alur_OB:
             nar "Tanganku gemetar saat memasukkan USB."
             nar "Layar menyala dengan cepat."
             nar "File-file mulai terbuka. Dokumen pajak. Data rahasia."
+            with vpunch
             y "Ini dia! Bukti yang aku cari..."
             nar "Tapi kemudian...."
             nar "beep... beep..."
@@ -793,7 +803,45 @@ label alur_OB:
     else:
         nar "Aku masih harus menggali lebih dalam."
         nar "Aku tak bisa membiarkan ini begitu saja."
+        jump gagal_misi
         return
+
+label gagal_misi:
+    scene bg_hitam
+    play music "bg_hitam.wav" loop
+    nar "Kamu duduk diam di sudut ruangan, tanganmu gemetar."
+    nar "Semua bukti yang seharusnya kamu kumpulkan... hilang begitu saja."
+    show You_Merengut at left
+    y "Bagaimana ini bisa terjadi...?"
+    y "Aku seharusnya lebih teliti."
+    
+    nar "Suara dalam pikiranmu terus menghantui. Semua perjuanganmu terasa sia-sia."
+    nar "Kamu tahu, misi ini penting. Tapi kali ini, kamu gagal."
+    
+    scene bg_darkalley
+    play sound "rain.ogg" loop
+    nar "Hujan turun deras di Taksopolis, seolah ikut menertawakan kegagalanmu."
+    nar "Bayangan Dominion Corp terus menghantuimu. Mereka masih bebas... dan kamu tidak bisa melakukan apa-apa."
+    
+    show Rendra_Datar at center
+    b "Apa kau pikir ini hanya permainan, Adi?"
+    with vpunch
+    b "Kau biarkan mereka lolos begitu saja. Kau gagal!"
+    hide Rendra_Datar
+
+    show You_Mewing at left
+    y "...Aku harus mencoba lagi. Ini belum berakhir."
+    
+    menu:
+        "Apa yang akan kamu lakukan sekarang?"
+        "Coba lagi dari awal":
+            jump start
+        "Keluar dari permainan":
+            scene bg_hitam
+            play music "ending_and_credit_scene.wav"
+            nar "Kamu meninggalkan semua itu. Namun di suatu tempat, kejahatan Dominion Corp terus berlanjut..."
+            "Bad Ending"
+            return
 
 label konvergensi:
 
@@ -835,6 +883,7 @@ label konvergensi:
 
     show You_Merengut at left
     y "Kau pikir aku tak akan tahu apa yang kau sembunyikan..."
+    with vpunch
     y "BASKORO!!"
     nar "Kamu melangkah mendekat. Setiap langkahmu terasa semakin penuh dengan ketegasan."
     nar "Kini, tak ada lagi tempat untuk lari."
@@ -855,6 +904,23 @@ label konvergensi:
     y "Apa yang kau lakukan dengan uang itu? Kenapa kau sembunyikan dari perusahaan?"
     nar "Kamu berbicara dengan nada yang lebih keras. Rasa marah dan keteguhan mengalir dalam suaranya."
 
+    with vpunch
+    show Baskoro_Datar at center
+    di "Beraninya kau, anak ingusan! Kau tidak tahu siapa yang kau lawan!"
+    
+    nar "Suara Baskoro menggema di ruangan. Tangannya menghantam meja dengan keras, membuat gelas di atasnya bergetar."
+
+    scene bg_hitam with fade
+    play sound "heartbeat.ogg"
+    nar "Jantungmu berdebar cepat. Tapi kamu tahu, ini bukan saatnya untuk mundur."
+    nar "Di luar ruangan ini, dunia sudah tahu siapa dia sebenarnya."
+
+    scene bg_darkalley with fade
+    nar "Ingatan akan hari-hari gelap di Taksopolis menghantammu. Semua rasa takut dan keputusasaan yang dirasakan karyawan..."
+    nar "...kini menjadi bahan bakar keberanianmu."
+
+    scene bg_insidekantor with fade
+    show You_Mewing at left
     show Baskoro_Datar at center
     di "Semua itu... demi perusahaan. Demi masa depan kita."
 
@@ -872,18 +938,42 @@ label konvergensi:
     y "Kau kira bisa lari begitu saja, [di]?"
     nar "Kamu segera mendekatkan dirinya ke pintu. Tak ada yang bisa melarikan diri dari kebenaran."
 
-    # Scene: Plot Twist - Polisi Sudah Datang
-    nar "Namun, tiba-tiba pintu terbuka. Polisi, yang sudah siap, masuk dengan tegas."
-    show Baskoro_Datar at center
-    Police "Tuan Baskoro Aryatama, Anda kami tangkap atas tuduhan penipuan, penyalahgunaan dana, dan penggelapan PAJAK."
+    y "Kau pikir semua ini akan berakhir begitu saja?"
+    y "Polisi sudah tahu semuanya, Baskoro. Tak ada lagi tempat untukmu bersembunyi."
+    
+
+    with vpunch
+    show Baskoro_Nyengir at center
+    di "POLISI? Kau pikir mereka akan percaya omonganmu? Uangku lebih berbicara daripada omong kosongmu!"
+
+    nar "Baskoro tertawa sinis, tetapi wajahnya kini pucat. Dia tahu ini sudah berakhir."
 
     show You_Senyum at left
-    y "Aku sudah menghubungi mereka. Polisi sudah di luar menunggu. Ini sudah selesai, Baskoro!."
+    y "Lihatlah sendiri."
 
-    nar "Direktur terlihat terkejut, keringatnya bercucuran, dan wajahnya penuh kebingungannya."
-    nar "Ia tak bisa berbuat apa-apa lagi."
+    nar "Suara langkah kaki terdengar di luar pintu. Semakin mendekat."
+    play sound "step.ogg"
+    pause 1
+    nar "Kemudian, pintu terbuka dengan kasar."
 
-    # Scene: Akhir yang Memuaskan
+    with vpunch
+    Police "Tuan Baskoro Aryatama, Anda ditangkap atas tuduhan penggelapan pajak, penipuan, dan penyalahgunaan dana perusahaan."
+
+    show Baskoro_Datar at center with vpunch
+    di "Tidak... ini tidak mungkin. Aku... AKU TAK AKAN KALAH!"
+
+    show You_Senyum at left
+    y "Sudah selesai, Baskoro. Permainanmu berakhir di sini."
+
+    scene bg_hitam with fade
+    play music "bg_pas_dapet_job.wav"
+    nar "Kamu melihat Baskoro dibawa pergi oleh polisi. Suaranya memudar di balik langkah-langkah berat mereka."
+    nar "Ruangan itu terasa lebih ringan sekarang. Beban yang selama ini menghimpit Taksopolis... akhirnya sirna."
+
+    show You_Mewing at left
+    y "...Akhirnya, keadilan ditegakkan."
+    y "Ini bukan hanya tentang aku. Ini tentang mereka yang tak pernah didengar."
+
     scene bg_kantor with dissolve
     nar "Direktur ditangkap. Polisi membawanya pergi, dan ia tak bisa melarikan diri lagi."
     nar "Para karyawan yang selama ini tertipu akhirnya menerima gaji yang seharusnya mereka dapatkan."

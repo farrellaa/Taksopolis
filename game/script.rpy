@@ -16,7 +16,9 @@ init :
     define tuk= Character("Tukang Batagor", callback=callback) #tukang batagor
     define un= Character("???", callback=callback)
     define Police= Character("Polisi", callback=callback) #untuk orang orang yang dibuat tidak perlu tau namanya
-screen disclaimer ():
+    
+###screen disclaimer ():
+
 screen credits_screen():
     tag menu
 

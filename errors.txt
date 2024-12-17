@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label konvergensi is defined twice, at File "game/script.rpy", line 500:
-label konvergensi:
-and File "game/script.rpy", line 739:
-label konvergensi:
-
+File "game/script.rpy", line 19: screen expects a non-empty block.
+    screen disclaimer ():
+                         ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Dec  2 17:38:58 2024
+Tue Dec 17 16:07:06 2024

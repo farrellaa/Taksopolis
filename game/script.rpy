@@ -28,45 +28,45 @@ screen credits_screen():
         
         text "Game Visual Novel Ini dibuat oleh:" size 30 bold True
         
-        text "- Project Manager:" size 25
-        text "1. Merlin Aurelia - 12823008 - Meteorologi" size 22
+        text "- Project Manager:" size 22
+        text "1. Merlin Aurelia - 12823008 - Meteorologi" size 20
 
-        text "- Game Designer:" size 25
-        text "1. Habib Annaafi Syafrin - 13723049 - Teknik Material" size 22
-        text "2. Alexander Gultom - 13723019 - Teknik Material" size 22
-        text "3. Jiro Adika Faruq - 12223099 - Teknik Perminyakan" size 22
-        text "4. Lika Adzkia - 12522070" size 22
-        text "5. Dafa Abdillah - 13021076" size 22
+        text "- Game Designer:" size 22
+        text "1. Habib Annaafi Syafrin - 13723049 - Teknik Material" size 20
+        text "2. Alexander Gultom - 13723019 - Teknik Material" size 20
+        text "3. Jiro Adika Faruq - 12023099 - Teknik Perminyakan" size 20
+        text "4. Lika Adzkia - 12220070" size 20
+        text "5. Dafa Abdillah - 13021076" size 20
 
-        text "- Script Writer/Story Developer:" size 25
-        text "1. Arla Lian Sabilla - 12823037 - Meteorologi" size 22
-        text "2. Sabrina Nurul Khatimah - 12823037 - Meteorologi" size 22
-        text "3. Taqidito Ilham Pratama - 18023039 - Teknik Tenaga Listrik" size 22
+        text "- Script Writer/Story Developer:" size 22
+        text "1. Arla Lian Sabilla - 12823037 - Meteorologi" size 20
+        text "2. Sabrina Nurul Khatimah - 12823037 - Meteorologi" size 20
+        text "3. Taqidito Ilham Pratama - 18023039 - Teknik Tenaga Listrik" size 20
 
-        text "- Programmer:" size 25
-        text "1. Taqidito Ilham P - 18023039 - Teknik Tenaga Listrik" size 22
-        text "2. Farrell Astrada - 18321021 - Teknik Biomedis" size 22
+        text "- Programmer:" size 22
+        text "1. Taqidito Ilham P - 18023039 - Teknik Tenaga Listrik" size 20
+        text "2. Farrell Astrada - 18321021 - Teknik Biomedis" size 20
 
-        text "- Graphic Designer/Illustrator:" size 25
-        text "1. Keysha Fatimah - 12823027" size 22
-        text "2. Nadhirah Alma Tawfiqa - 12823016" size 22
-        text "3. Taza Nadia Az Zahra - 12823045" size 22
-        text "4. Taqidito Ilham Pratama - 18023039 - Teknik Tenaga Listrik" size 22
+        text "- Graphic Designer/Illustrator:" size 22
+        text "1. Keysha Fatimah - 12823027" size 20
+        text "2. Nadhirah Alma Tawfiqa - 12823016" size 20
+        text "3. Taza Nadia Az Zahra - 12823045" size 20
+        text "4. Taqidito Ilham Pratama - 18023039 - Teknik Tenaga Listrik" size 20
 
-        text "- UI/UX Designer:" size 25
-        text "1. Benedito Benito Tei De Mori - 15320085 - Teknik Lingkungan" size 22
+        text "- UI/UX Designer:" size 22
+        text "1. Benedito Benito Tei De Mori - 15320085 - Teknik Lingkungan" size 20
 
-        text "- Sound Designer/Composer:" size 25
-        text "1. Kevin A. Aryasena - 12923047 - Oseanografi" size 22
+        text "- Sound Designer/Composer:" size 22
+        text "1. Kevin A. Aryasena - 12923047 - Oseanografi" size 20
 
-        text "- Quality Assurance (QA) Tester:" size 25
-        text "1. Salsabila Effendi - 12823066 - Meteorologi" size 22
-        text "2. Erin Carolina - 15323012" size 22
+        text "- Quality Assurance (QA) Tester:" size 22
+        text "1. Salsabila Effendi - 12823066 - Meteorologi" size 20
+        text "2. Erin Carolina - 15323012" size 20
 
-        text "- Publication Specialist:" size 25
-        text "1. Grace Situmeang - 15323088 - Teknik Lingkungan" size 22
+        text "- Publication Specialist:" size 22
+        text "1. Grace Situmeang - 15323088 - Teknik Lingkungan" size 20
 
-        text "Dibimbing oleh Bapak Harry Nuriman, untuk tugas PKWN." size 25 bold True
+        text "Dibimbing oleh Bapak Harry Nuriman, untuk tugas PKWN." size 22 bold True
 
         textbutton "Kembali ke Menu Utama" action Return() align (0.5, 0.9)
 
@@ -124,6 +124,12 @@ label start:
     nar "Di antara bayangan dan bau asam dari lorong itu, Seakan membisikkan sesuatu padamu"  
     nar "'Jangan percaya dengan mereka yang tidak mendengar...'"
     nar "suara itu seperti bisikan hantu, samar tapi cukup tajam untuk menusuk telingamu."  
+
+    nar "kamu melihat seorang ibu tua sedang duduk memeluk anaknya yang sakit."  
+    nar "Rumah sakit menolak mereka karena tak mampu membayar biaya pengobatan."  
+    show You_Merengut at left  
+    y "Kalau saja pajak itu tidak digelapkan... kalau saja mereka punya healthcare yang layak..."  
+    nar "Kemarahanmu semakin membara. Kamu berjanji, kebenaran ini harus terungkap."  
 
 
     nar "buzz... buzz..."
@@ -196,6 +202,14 @@ label deskripsi_latar:
     y "....."
     y "Bro Rendra memang suka iseng"
 
+    scene bg_darkalley
+    nar "Kota Taksopolis tampak megah dari kejauhan. Namun semakin dalam kamu melangkah, semakin banyak kejujuran yang terlihat terkubur."  
+    nar "Bangunan kumuh berdiri di antara gedung-gedung pencakar langit milik para taipan."  
+    nar "Jalanan penuh lubang, anak-anak berlari tanpa alas kaki, dan bau sampah menyengat hidungmu."  
+
+    show You_Merengut at left
+    y "...Beginikah hasil dari sebuah kota yang diatur oleh orang-orang serakah?"
+    pause 1
     nar "Sudah beberapa jam semenjak terakhir kamu menyantap hidangan"
     nar "Menanggapi kelaparanmu,"
     nar "Kamu menghampiri sebuah stand batagor yang ada di pinggir jalan"
@@ -371,6 +385,32 @@ label tindaklanjut:
         "Office Boy" :
             $ Accountant = 0
     scene bg_darkalley
+    play music "bg_hitam.wav" loop
+
+    nar "Di perjalanan menuju kantor Dominion Corp, kamu melewati sebuah panti asuhan tua."  
+    nar "Atap bangunan itu bocor, dindingnya retak, dan anak-anak berlarian tanpa sepatu."
+
+    show You_Merengut at left
+    y "Panti ini... tidak layak dihuni. Bahkan untuk anak kecil sekalipun."
+
+    scene bg_poorfamily
+    nar "Seorang wanita paruh baya muncul, wajahnya letih namun penuh senyum kecil."  
+    show un at center
+    un "Selamat sore, Pak. Mencari sesuatu?"
+
+    menu:
+        "Tanya tentang panti asuhan ini":
+            un "Dulu pemerintah sering membantu kami. Tapi sekarang, bantuan itu hilang... katanya tidak ada dana."  
+            show You_Mewing at left
+            y "Tidak ada dana? Tapi anggaran seharusnya mencukupi..."
+
+            un "Kalau pajak dibayarkan tepat waktu, mungkin sekolah ini sudah direnovasi. Anak-anak pantas dapat masa depan, bukan?"  
+            y "...Pajak itu bukan sekadar angka. Ini soal kehidupan."
+
+        "Lewati dan lanjutkan perjalanan":
+            nar "Kamu menundukkan kepala dan pergi. Namun gambaran wajah anak-anak itu tetap membekas di benakmu."  
+            y "...Aku harus menyelesaikan ini."
+
     play sound "step.ogg"
     pause 1
     nar "dengan waktu yang semakin menipis, kamu bergegas menuju Jalan Garuda Nomor 49F"
@@ -921,6 +961,13 @@ label konvergensi:
 
     scene bg_insidekantor with fade
     show You_Mewing at left
+    
+    y "Kau pikir uang yang kau simpan bisa menyelamatkanmu? Pajak itu milik rakyat!"  
+    y "Tanpa pajak, anak-anak kehilangan sekolah, pasien kehilangan rumah sakit, dan karyawan kehilangan nyawanya!"  
+    show Baskoro_Nyengir at center  
+    di "Rakyat? Negara? Mereka tidak peduli darimana uang itu berasal!"  
+    show You_Merengut at left  
+    y "Salah! Tanpa kepercayaan, negara ini runtuh! Kau adalah bukti buruknya penguasa yang rakus."  
     show Baskoro_Datar at center
     di "Semua itu... demi perusahaan. Demi masa depan kita."
 
@@ -987,6 +1034,9 @@ label konvergensi:
     nar "Segala perjuangan yang dilakukan, tak sia-sia. Semua petunjuk yang terkumpul kini membawa pada akhirnya."
 
     scene bg_hitam
+    nar "Bayarlah pajak dengan benar."  
+    nar "Pajak Anda membangun sekolah, rumah sakit, dan jalan raya untuk masa depan kita bersama."  
+
     nar "Good Ending"
     scene black
     with fade

@@ -392,8 +392,6 @@ label tindaklanjut:
 
     show You_Merengut at left
     y "Panti ini... tidak layak dihuni. Bahkan untuk anak kecil sekalipun."
-
-    scene bg_poorfamily
     nar "Seorang wanita paruh baya muncul, wajahnya letih namun penuh senyum kecil."  
     show un at center
     un "Selamat sore, Pak. Mencari sesuatu?"

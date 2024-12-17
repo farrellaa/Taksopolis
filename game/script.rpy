@@ -16,6 +16,7 @@ init :
     define tuk= Character("Tukang Batagor", callback=callback) #tukang batagor
     define un= Character("???", callback=callback)
     define Police= Character("Polisi", callback=callback) #untuk orang orang yang dibuat tidak perlu tau namanya
+screen disclaimer ():
 screen credits_screen():
     tag menu
 
@@ -108,6 +109,7 @@ image Bisikan:
 
 #label start SELALU muncul di new gamez
 label start:
+    ####ttempat disclaimer
     scene bg_darkalley
     #show eileen happy
 
@@ -413,12 +415,12 @@ label alur_akuntan:
     $ counter = 0
 
     menu:
-        "Kebetulan skill dan kemampuan saya sesuai dengan yang dicari perusahaan Bapak":
+        "Kebetulan skill dan kemampuan saya sesuai dengan yang dicari perusahaan Ibu":
             $ counter += 1
             an "Jawaban yang bagus. Kami memang mencari kandidat dengan kemampuan seperti itu."
-        "Saya anaknya direktur, Pak":
+        "Saya anaknya direktur, Bu":
             an "Itu bukan alasan yang cukup kuat untuk melamar di sini."
-        "Saya ingin menyelidiki tentang penggelapan pajak kantor ini, Pak":
+        "Saya ingin menyelidiki tentang penggelapan pajak kantor ini, Bu":
             an "Itu alasan yang aneh. Apakah Anda serius?"
 
     an "Apa yang Anda ketahui tentang posisi yang Anda lamar ini?"

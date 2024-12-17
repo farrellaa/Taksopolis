@@ -105,7 +105,7 @@ Game Visual Novel Ini dibuat oleh:
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Tax Detective"
+define build.name = "Tax_Detective"
 
 
 ## Sounds and music ############################################################

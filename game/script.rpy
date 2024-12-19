@@ -17,7 +17,28 @@ init :
     define un= Character("???", callback=callback)
     define Police= Character("Polisi", callback=callback) #untuk orang orang yang dibuat tidak perlu tau namanya
     
-###screen disclaimer ():
+screen disclaimer():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        add "warning_sign.png" align (0.5, 0.5)  # Tambahkan gambar di atas
+        
+        text "Peringatan!!!" size 70 color "#ffff00" text_align 0.5 bold True align (0.5, 0.5)
+        
+        text "Cerita dalam game ini hanyalah fiktif dan karangan belaka." size 40 color "#ffff00" text_align 0.5 align (0.5, 0.5)
+        
+        text "Jika ada kesamaan nama tokoh, tempat kejadian" size 40 color "#ffff00" text_align 0.5 align (0.5, 0.5)
+        text "atau cerita, itu adalah kebetulan semata." size 40 color "#ffff00" text_align 0.5 align (0.5, 0.5)
+        
+        textbutton "Saya Mengerti" action [Hide("disclaimer"), Jump("transisi_taksopolis")] style "button":
+            text_color "#000000"
+            background "#ffffff"
+            xalign 0.5
+            padding (20, 10)
 
 screen credits_screen():
     tag menu
@@ -70,6 +91,214 @@ screen credits_screen():
 
         textbutton "Kembali ke Menu Utama" action Return() align (0.5, 0.9)
 
+screen latar_taksopolis():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Kota Taksopolis" size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("main_story")
+
+screen latar_pusatTaksopolis():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Pusat Kota Taksopolis" size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("deskripsi_latar")
+
+screen latar_TaksopolisJalan():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Di tengah dinginnya malam, kamu pun kembali menyusuri jalanan Taksopolis..." size 60 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("deskripsi_latar2")
+
+screen latar_batagor():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Kamu pun menghampiri penjual Batagor di sisi jalan itu..." size 60 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("deskripsi_latar3")
+
+screen latar_penginapan():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Malam itu di penginapan..." size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("tindaklanjut2")
+
+screen latar_kantor1():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Dominion Corp" size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("alur_akuntan")
+
+screen latar_kantor2():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Dominion Corp" size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("alur_OB")
+
+screen latar_HRD1():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Ruangan HRD Dominion Corp" size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("alur_akuntan2")
+
+screen latar_akuntan():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Ruangan Auditor" size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("bekerja_accountant")
+
+screen latar_OB():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Ruangan Kerja Utama" size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("alur_OB2")
+
+screen latar_OB2():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Kamu pun mengelilingi area kantor Dominion Corp ditemani oleh Bu Anita" size 60 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("transisi_OB4")
+
+screen latar_OB3():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Ruang Penyimpanan Arsip Dokumen" size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("alur_OB3")
+
+screen latar_OB4():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Ruang Office Boy" size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("alur_OB5")
+
+screen latar_OB5():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Ruang Direktur Dominion Corp" size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("alur_OB6")
+
+screen latar_OB6():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Kamu pun kembali ke Ruang Penyimpanan Arsip Dokumen" size 65 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("alur_OB7")
+
+screen latar_OB7():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Setelah menemukan kejanggalan, kamu pun meninggalkan ruangan tersebut dan memasuki Ruang Pantry" size 60 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+
+    timer 1.0 action Jump("alur_OB8")
+
+screen bad_ending():
+    modal True
+    add "#000"  # Latar belakang hitam
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
+        
+        text "Anda telah gagal menjalankan misi untuk mengungkap kasus di kota Taksopolis." size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+        text "Kejahatan di Kota Taksopolis pun tidak pernah terungkap dan rakyat semakin menderita." size 70 color "#ffffff" text_align 0.5 align (0.5, 0.5)
+        textbutton "Kembali ke Menu Utama" action Return() style "button":
+            text_color "#000000"
+            background "#ffffff"
+            xalign 0.5
+            padding (10, 5)
+
 
 image You_Merengut="You/You_Merengut.png"
 image You_Mewing="You/You_Mewing.png"
@@ -111,9 +340,17 @@ image Bisikan:
     zoom 1.5
     yalign 0.5
 
+
 #label start SELALU muncul di new gamez
 label start:
-    ####ttempat disclaimer
+    call screen disclaimer
+    return
+        
+label transisi_taksopolis:
+    call screen latar_taksopolis
+    return
+
+label main_story:
     scene bg_darkalley
     #show eileen happy
 
@@ -128,7 +365,7 @@ label start:
     nar "kamu melihat seorang ibu tua sedang duduk memeluk anaknya yang sakit."  
     nar "Rumah sakit menolak mereka karena tak mampu membayar biaya pengobatan."  
     show You_Merengut at left  
-    y "Kalau saja pajak itu tidak digelapkan... kalau saja mereka punya healthcare yang layak..."  
+    y "Kalau saja pajak itu tidak digelapkan... kalau saja mereka punya akses layanan kesehatan yang layak..."  
     nar "Kemarahanmu semakin membara. Kamu berjanji, kebenaran ini harus terungkap."  
 
 
@@ -156,11 +393,15 @@ label start:
     show You_Senyum at left
     y "Entah apa yang akan kau berikan padaku kali ini"
 
-    jump deskripsi_latar
+    jump transisi_pusatTaksopolis
 
     return
 
 label end:
+    return
+
+label transisi_pusatTaksopolis:
+    call screen latar_pusatTaksopolis
     return
 
 label deskripsi_latar:
@@ -201,7 +442,13 @@ label deskripsi_latar:
     y "Apa ini?"
     y "....."
     y "Bro Rendra memang suka iseng"
+    jump transisi_latar2
 
+label transisi_latar2:
+    call screen latar_TaksopolisJalan
+    return
+
+label deskripsi_latar2:
     scene bg_darkalley
     nar "Kota Taksopolis tampak megah dari kejauhan. Namun semakin dalam kamu melangkah, semakin banyak kejujuran yang terlihat terkubur."  
     nar "Bangunan kumuh berdiri di antara gedung-gedung pencakar langit milik para taipan."  
@@ -213,7 +460,13 @@ label deskripsi_latar:
     nar "Sudah beberapa jam semenjak terakhir kamu menyantap hidangan"
     nar "Menanggapi kelaparanmu,"
     nar "Kamu menghampiri sebuah stand batagor yang ada di pinggir jalan"
+    jump transisi_latar3
 
+label transisi_latar3:
+    call screen latar_batagor
+    return
+
+label deskripsi_latar3:
     scene bg_foodstand
     play music "foodstand.wav" loop
     show You_Senyum at left
@@ -304,7 +557,13 @@ label tindaklanjut:
     "..."
     play sound "step.ogg"
     y "Inikah..."
+    jump transisi_tindaklanjut
 
+label transisi_tindaklanjut:
+    call screen latar_penginapan
+    return
+
+label tindaklanjut2:
     scene bg_computer
     play music "initial_dark_alley_intro (1).wav" loop
     y "Kalo dugaanku benar..."
@@ -392,7 +651,10 @@ label tindaklanjut:
 
     show You_Merengut at left
     y "Panti ini... tidak layak dihuni. Bahkan untuk anak kecil sekalipun."
+
+    scene bg_poorfamily
     nar "Seorang wanita paruh baya muncul, wajahnya letih namun penuh senyum kecil."  
+    show un at center
     un "Selamat sore, Pak. Mencari sesuatu?"
 
     menu:
@@ -418,13 +680,16 @@ label tindaklanjut:
     nar "Kamu memasuki kantor tersebut dengan langkah perlahan"
     
     if Accountant :
-        jump alur_akuntan
+        jump transisi_akuntan
     else :
-        jump alur_OB
+        jump transisi_OB
 
 
 ##PERCABANGAN BESAR
 
+label transisi_akuntan:
+    call screen latar_kantor1
+    return
 
 label alur_akuntan:
     scene bg_kantor
@@ -444,7 +709,13 @@ label alur_akuntan:
     nar "Sepanjang perjalanan, kamu memperhatikan setiap sudut ruangan dengan seksama."
     y "...Segalanya terlihat terlalu sempurna di sini..." 
     y "...Apa ini cara mereka menutupi kebusukan mereka?..."
+    jump transisi_akuntan2
 
+label transisi_akuntan2:
+    call screen latar_HRD1
+    return
+
+label alur_akuntan2:
     scene bg_ruanghrd
     play music "hrd_mulai_diwawancara.wav" loop
     nar "Langkah wanita tersebut kemudian berhenti di depan ruangan bertuliskan 'HRD' "
@@ -510,102 +781,98 @@ label ditolak_accountant:
     nar "Hatimu bergejolak, mengapa ini bisa terjadi?"
     nar "Mungkin di misi selanjutnya dirimu bisa berbenah"
     nar "...dan berhenti mengacaukan semuanya."
+    jump ending_buruk
+
+label transisi_akuntanKerja:
+    call screen latar_akuntan
     return
 
-label bekerja_accountant:
+label bekerja_accountant :
     $ detective_point = 0  # Variabel untuk mencatat poin deteksi yang benar
 
-    # Scene 1: Ruang Kerja Akuntan
+    # Scene: Kantor Auditor
     scene bg_insidekantor
-    play music "bg_kantor.wav" loop
-    nar "Hari pertama sebagai akuntan di Dominion Corp. Ruang kerja ini tampak sunyi, tapi ada sesuatu yang terasa janggal."  
-    show You_Mewing at left  
-    y "Banyak angka di sini. Tapi, angka tidak pernah bohong... kecuali jika seseorang memutarbalikkannya."  
-    nar "Tugas pertamamu adalah memeriksa laporan keuangan. Sebuah meja dengan tumpukan berkas menantimu."  
+    nar "Kamu baru saja diterima sebagai akuntan."
+    nar "Tugas pertama kali ini penting."
+    nar "Kamu harus memeriksa laporan keuangan yang mencurigakan."
+    show You_Mewing at left
+    y "Banyak hal yang bisa tersembunyi di sini."
+    y "Setiap angka, setiap transaksi... harus diperiksa."
 
     # Deteksi 1: Pemotongan Asuransi
-    nar "Matamu tertuju pada laporan gaji karyawan. Kamu menyisir setiap angka dengan hati-hati."  
-    show You_Merengut at left  
-    y "Ada yang tidak beres di sini... potongan asuransi?"
-
     menu:
-        "Periksa lebih dalam: Potongan asuransi ini tidak tercatat dengan jelas.":
+        "Nomor referensi... tak ada masalah.":
+            $ correct_answer = False
+            y "...Tak ada yang aneh di sini."
+            y "Laporan ini terlihat biasa saja."
+        "Pemotongan ini... tak tercatat dengan jelas.":
+            $ correct_answer = True
             $ detective_point += 1
-            y "Potongan ini tidak ada rincian pastinya. Harusnya ada penjelasan lengkap tentang klaim asuransi."  
-            nar "Bayangkan jika salah satu karyawan sakit dan asuransi itu tidak cair... Nyawa bisa terancam hanya karena ini."  
-            y "Ini bukan sekadar angka, ini soal hidup dan mati."  
-        "Nomor referensi tampak wajar, lanjutkan saja.":
-            y "Mungkin ini bukan masalah besar. Tapi... perasaan ini masih menggangguku."  
-        "Abaikan, fokus ke laporan lain.":
-            y "Aku harus hati-hati. Terlalu banyak asumsi bisa membuatku melewatkan hal penting."
+            y "Pemotongan asuransi? Aneh..."
+            y "Kenapa tidak tercatat dengan jelas?"
+            y "Harusnya tercantum di baris ini."
+            y "Ini bisa menjadi petunjuk."
+        "Laporan ini... lanjutkan saja.":
+            $ correct_answer = False
+            y "Apa aku salah? Tak ada yang mencurigakan."
+            y "Tapi... rasanya ada yang hilang."
 
-    # Scene 2: Ruang Arsip
-    scene bg_documentroom
-    play music "bg_hitam.wav" loop
-    nar "Kamu pindah ke ruang arsip untuk memeriksa dokumen lebih lama. Ruangan itu dingin dan berdebu, seolah menyembunyikan banyak rahasia."  
-    show You_Mewing at left  
-    y "Jika ada yang ingin disembunyikan... pasti ada di sini."
-
-    # Deteksi 2: Pengeluaran Tidak Wajar
-    nar "Kamu menemukan berkas pengeluaran perusahaan. Salah satu laporan mencurigakan menarik perhatianmu."  
+    # Deteksi 2: Pengeluaran yang Tidak Jelas
+    hide You_Mewing
+    show You_Merengut at left
     menu:
-        "Lihat detail pembayaran ke luar negeri: Kenapa ada biaya ini?":
+        "Pembayaran luar negeri... aneh.":
+            $ correct_answer = True
             $ detective_point += 1
-            y "Pembayaran luar negeri sebesar 2 miliar rupiah? Tidak ada keterangan barang atau jasa apapun."  
-            y "Untuk apa uang ini? Ini jelas transaksi yang mencurigakan."  
-            nar "Pikiranmu mulai mengaitkan semua ini... Ke mana larinya uang rakyat jika pajak terus dimanipulasi?"  
-        "Pengeluaran ini terlihat sudah disetujui, lanjutkan saja.":
-            y "Mungkin ini sah... Tapi mengapa rasanya ada yang salah?"
-        "Biarkan saja. Fokus ke dokumen berikutnya.":
-            y "Aku mungkin hanya berlebihan. Ada hal lain yang harus kuperiksa."
+            y "Pembayaran ini ke luar negeri... kenapa?"
+            y "Kebijakan perusahaan tak pernah menyebutkan ini."
+            y "Ini transaksi yang mencurigakan."
+            y "Ada yang tak beres dengan ini."
+        "Pengeluaran sudah disetujui dalam rapat.":
+            $ correct_answer = False
+            y "Pengeluaran ini sudah disetujui."
+            y "Tak ada yang bisa aku temukan di sini."
+            y "Sepertinya... ini bukan masalah."
+        "Tak ada yang aneh... lanjutkan saja.":
+            $ correct_answer = False
+            y "Tak ada bukti yang kuat di sini."
+            y "Tapi kenapa rasanya aku tetap merasa ada yang salah?"
 
-    # Refleksi di Ruang Pantry
-    scene bg_kitchen
-    play music "bg_hitam.wav"
-    nar "Kamu menuju pantry untuk menenangkan pikiran. Beberapa karyawan berbincang di pojok, namun hening ketika melihatmu masuk."  
-    show You_Merengut at left  
-    y "Suasana di sini terlalu aneh. Mereka seperti takut berbicara... Apa yang mereka sembunyikan?"  
-    nar "Satu suara samar terdengar dari dua karyawan di ujung ruangan."  
-
-    show Bisikan at center with vpunch
-    un "Potongan gaji kita makin besar, tapi fasilitas kesehatan malah dicabut."  
-    un "Kalau begini terus, siapa yang akan bertanggung jawab kalau kita sakit?"  
-
-    hide Bisikan
-    show You_Mewing at left  
-    y "...Mereka bahkan tidak tahu hak mereka. Pajak yang seharusnya untuk mereka malah lenyap begitu saja."  
-
-    # Scene 3: Laporan Karyawan - Jumlah Karyawan Tak Wajar
-    scene bg_insidekantor
-    nar "Kamu kembali ke meja kerjamu dan membuka laporan terakhir: jumlah karyawan."  
-    show You_Mewing at left  
-    y "Jumlah karyawan resmi... 900 orang? Tunggu..."  
-    nar "Kamu membuka data publik dari Dominion Corp yang diberikan oleh Bro Rendra."  
-
+    # Deteksi 3: Junlah karyawan tak wajar
+    hide You_Merengut
+    show You_Mewing at left
+    y "Dokumen selanjutnya"
+    y "..."
+    with vpunch
+    y "JUMLAH KARYAWAN!"
+    nar "Jarimu bergerak dengan lincah di dokumen tersebut"
     menu:
-        "Cocokkan dengan data publik: Ini tidak benar!":
+        "900 Orang, wajar":
+            $ correct_answer = False
+            y "Jumlah ini mungkin sedikit tidak biasa."
+            y "Tapi... ini bisa saja masih masuk akal."
+        "900 Orang? Bukannya....":
+            $ correct_answer = True
             $ detective_point += 1
             with vpunch
-            y "Mereka mengklaim 1500 karyawan! Tapi di sini cuma 900!"  
-            y "Selisih 600 orang... Apakah ini cara mereka menghindari pajak tenaga kerja?"  
-            nar "Dampaknya jelas: uang yang seharusnya untuk kesejahteraan karyawan lenyap begitu saja."  
-        "Lewati saja, mungkin ini bukan masalah besar.":
-            y "Angka ini aneh... Tapi aku harus berhati-hati sebelum menuduh sesuatu."  
+            y "900 Orang?!"
+            y "padahal di dokumen mereka yang dipulish ke publik..."
+            nar "Kamu mengecek dokumen dari Bro Rendra"
+            y "1500..."
+            y "Bingo"
+        "I see nothing" :
+            $ correct_answer = False
+            y "Hmmmm"
+            y "Tidak ada yang aneh"
 
-    # Refleksi Akhir Investigasi
-    scene bg_hitam
-    nar "Kamu menyandarkan tubuhmu di kursi, memejamkan mata sejenak."  
-    nar "Potongan asuransi yang tidak jelas. Pengeluaran misterius ke luar negeri. Jumlah karyawan yang dipalsukan."  
-    show You_Merengut at left  
-    y "Semua ini... tidak hanya soal uang. Ini tentang kehidupan orang-orang yang dirampas haknya."  
-    y "Jika pajak itu dibayarkan dengan benar, berapa banyak sekolah yang bisa dibangun? Berapa banyak nyawa yang bisa diselamatkan?"  
-
-    # Keputusan Akhir
+    # Konvergensi jika poin benar >= 2
     if detective_point >= 2:
         jump konvergensi_1
     else:
+        nar "Aku masih harus menggali lebih dalam."
+        nar "Aku tak bisa membiarkan ini begitu saja."
         jump gagal_misi
-
+        return
 
 label konvergensi_1:
     nar "Sepertinya feelingmu cukup kuat"
@@ -617,9 +884,12 @@ label konvergensi_1:
     jump konvergensi
     return
 
+# Alur OB
+label transisi_OB:
+    call screen latar_kantor2
+    return
 
 label alur_OB:
-
     scene bg_kantor
     play music "bg_kantor.wav" loop 
     show HRD_Senyum at center
@@ -645,6 +915,11 @@ label alur_OB:
     nar "seolah ada makna tersembunyi di baliknya."
     an "Ayo, saya akan memperkenalkan Anda ke area kerja."
     
+label transisi_OB2:
+    call screen latar_OB
+    return
+
+label alur_OB2:
     scene bg_insidekantor
     play music "bg_hitam.wav" loop
     show HRD_Senyum
@@ -662,6 +937,19 @@ label alur_OB:
     play music "inside_dan_tour_kantor.wav" loop
     nar "Ibu Anita memimpinmu menyusuri koridor panjang yang sepi." 
     nar "Suara langkahmu bergema samar di dinding putih."
+    jump transisi_OB3
+    
+# Scene berkeliling
+label transisi_OB3:
+    call screen latar_OB2
+    return
+
+# Scene Ruang Penyimpanan Arsip Dokumen
+label transisi_OB4:
+    call screen latar_OB3
+    return
+
+label alur_OB3:
     scene bg_documentroom
     show HRD_Senyum at center
     an "Ini adalah area penyimpanan dokumen penting."
@@ -707,7 +995,14 @@ label alur_OB:
     an "Kadang ada kebijakan perusahaan yang sulit dimengerti oleh orang luar, Pak Adi. Kami hanya ingin menjaga keberlanjutan bisnis."
     y "Tentu saja, Bu. Saya paham sekali."
     nar "Namun, di balik senyum sopanmu, niatmu semakin kuat untuk menyelidiki lebih dalam."
+    jump transisi_OB5
 
+label transisi_OB5:
+    call screen latar_OB4
+    return
+
+label alur_OB5:
+    # Scene Ruang OB
     scene bg_officeboy
     play music "ruang_hrd_dan_ruang_OB.wav" loop
     show HRD_Senyum
@@ -720,7 +1015,13 @@ label alur_OB:
     an "Jika Anda butuh bantuan atau merasa kesulitan, jangan ragu untuk menghubungi saya, ya."
     y "Tentu, Bu. Terima kasih."
     nar "Anita tersenyum ramah sebelum meninggalkanmu untuk memulai pekerjaanmu."
+    jump transisi_OB6
 
+label transisi_OB6:
+    call screen latar_OB5
+
+label alur_OB6:
+    # Scene Ruang Direktur
     scene bg_directoroffice
     play music "director_office.wav" loop
     nar "Kamu membuka pintu ruangan Direktur dengan hati-hati."
@@ -743,7 +1044,14 @@ label alur_OB:
             $ laporan_keuangan=True
         "Lanjutkan bersih-bersih tanpa menyentuh apa pun":
             nar "Kamu memilih untuk tidak mengambil risiko sekarang. Ada banyak waktu untuk mencari bukti lebih besar nanti."
+    jump transisi_OB7
 
+label transisi_OB7:
+    call screen latar_OB6
+    return
+
+label alur_OB7:
+    # Ruang Penyimpanan Arsip Dokumen
     scene bg_documentroom
     nar "Ruangan arsip itu sunyi."
     nar "Hanya suara langkahmu yang menggema di antara rak-rak tinggi berisi dokumen tebal."
@@ -770,6 +1078,15 @@ label alur_OB:
         "Biarkan file tetap di sana":
             nar "Kamu memutuskan untuk meninggalkan file itu."
             nar "Tapi fakta ini terus menghantui pikiranmu."
+
+    jump transisi_OB8
+
+label transisi_OB8:
+    call screen latar_OB7
+    return
+
+label alur_OB8:
+    # Ruangan Pantry
     scene bg_kitchen
     nar "Ruangan pantry sunyi."
     nar "Hanya suara mesin kopi yang mengisi udara."
@@ -796,6 +1113,8 @@ label alur_OB:
         "Biarkan nota tetap di sana":
             nar "Kamu memutuskan untuk tidak mengambil risiko."
             y "...Tapi nota itu terus memanggilku."
+    
+    # Scene Ruang Penyimpanan
     scene bg_storage
     nar "Ruang penyimpanan terasa gelap dan lembap."
     nar "Lampu di langit-langit berkedip pelan, menciptakan bayangan yang bergerak-gerak."
@@ -827,6 +1146,8 @@ label alur_OB:
             nar "beep... beep..."
             nar "Alarm berbunyi. Layar tiba-tiba berubah merah."
             nar "Sebuah pesan muncul di layar: 'AKSES ILEGAL TERDETEKSI.'"
+            
+            # Scene "Gawat, sepertinya mereka mengetahui tindakanku..."
             scene bg_insidekantor
             nar "Langkah kaki terdengar mendekat."
             an "Pak Adi, apa yang sedang Anda lakukan di sini?"
@@ -835,7 +1156,7 @@ label alur_OB:
             nar "Tubuhmu terasa kaku."
             nar "Dalam beberapa menit, kamu sudah berada di luar gedung."
             y "...Aku dipecat."
-            return
+            jump ending_buruk
 
         "Tunggu sampai nanti untuk memeriksa":
             nar "Kamu menggenggam USB itu erat-erat."
@@ -886,7 +1207,7 @@ label gagal_misi:
             play music "ending_and_credit_scene.wav"
             nar "Kamu meninggalkan semua itu. Namun di suatu tempat, kejahatan Dominion Corp terus berlanjut..."
             "Bad Ending"
-            return
+            jump ending_buruk
 
 label konvergensi:
 
@@ -1082,7 +1403,12 @@ label Abaikan:
             jump tindaklanjut
         "Tidak, saya mau bersantai":
             play music "ending_and_credit_scene.wav" loop
-            nar "Anda telah gagal menjalankan misi untuk mengungkap kasus di kota Taksopolis"
+            jump ending_buruk
+
+label ending_buruk:
+    play music "ending_and_credit_scene.wav" loop
+    call screen bad_ending
+    return
 
     
 
